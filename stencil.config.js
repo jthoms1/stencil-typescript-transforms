@@ -1,7 +1,10 @@
 exports.config = {
+  namespace: "dev-transforms",
+  generateDistribution: true,
+  generateWWW: false
 };
 
 exports.devServer = {
-  root: 'www',
+  root: 'slides',
   watchGlob: '**/**'
 };

@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Building StencilJS with TypeScript</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <script src="dist/dev-transforms.js"></script>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+    </script>
+
+    <style>
+      .reveal section img.nostyle {
+          background: none;
+          border: none;
+          box-shadow: none;
+          margin: 0;
+      }
+      .example-num {
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        font-size: 0.8em;
+        color: grey;
+      }
+      b {
+        font-weight: normal;
+        color:aqua;
+      }
+      i {
+        font-style: normal;
+        color: yellow;
+      }
+      img.trans {
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        margin: 0 !important;
+      }
+    </style>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h3>Building StencilJS with TypeScript</h3>
+          <p>
+            <hello-there userid="jthoms1"></hello-there>
+          </p>
+        </section>
+
+        <section>
+          <h2>About Me</h2>
+        </section>
+
+        <section>
+          <h2>My Intro to TypeScript</h2>
+        </section>
+
+        <section>
+          <h2>What is Ionic?</h2>
+          <ul>
+            <li>Cross platform UI kit</li>
+            <li>AngularJS -> Angular -> <span class="fragment">Stencil</span></li>
+            <li>TypeScript</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>The Next Release of Ionic</h2>
+        </section>
+
+        <section>
+          <h2>StencilJS Born out of Necessity</h2>
+        </section>
+
+        <section>
+          <h2>The Next Release of Ionic</h2>
+        </section>
+
+        <section>
+          <h2>StencilJS Born out of Necessity</h2>
+        </section>
+
+        <section data-transition="fade-in fade-out">
+          <section>
+            <span class="example-num">example3</span>
+            <pre><code class="javascript" data-trim>
+var people = [...];
+
+
+
+
+
+var names = people.map(function(person) {
+  return person.first_name;
+});
+
+// ['Josh', 'Lindsey', 'Ellie', 'Addie']
+          </code></pre>
+            <ul>
+              <li class="fragment fade-in">The <i>map</i> array method creates a new array with the results of calling a provided function on every element.</li>
+              <li class="fragment fade-in">ES5 Array functions: <i>map, reduce, filter, find</i></li>
+              <li class="fragment fade-in"><b>Pure Function</b> (no side effects)</li>
+            </ul>
+          </section>
+          <section>
+            <ul>
+              <li>A <b>Pure Function</b> is a function where the return value is only determined by its input values, without observable side effects.</li>
+            </ul>
+          </section>
+        </section>
+
+        <section data-transition="fade-in fade-out">
+          <span class="example-num">example4</span>
+          <pre><code class="javascript" data-trim>
+var people = [...];
+
+function getAttribute(attributeName, obj) {
+  return obj[attributeName];
+}
+
+
+people.map(function(person) {
+  return getAttribute('first_name', person);
+});
+// ['Josh', 'Lindsey', 'Ellie', 'Addie']
+          </code></pre>
+          <ul>
+            <li>The <i>map</i> array method creates a new array with the results of calling a provided function on every element.</li>
+            <li>ES5 Array functions: <i>map, reduce, filter, find</i></li>
+            <li><b>Pure Function</b> (no side effects)</li>
+          </ul>
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <section>
+            <span class="example-num">example5</span>
+            <pre><code class="javascript" data-trim>
+var people = [...];
+
+function getAttribute(attributeName) {
+  return function(obj) {
+    return obj[attributeName];
+  }
+}
+var getName = getAttribute('first_name');
+
+people.map(getName);
+// ['Josh', 'Lindsey', 'Ellie', 'Addie']
+            </code></pre>
+            <ul>
+              <li class="fragment fade-in">The <i>getAttribute</i> function got more useful and generalized
+                through the use of a technic called <b>currying</b>.<br/><br/><br/></li>
+            </ul>
+          </section>
+          <section>
+            <ul>
+              <li><b>Currying</b> is changing a function that takes multiple
+              arguments into a sequence of functions with the same result. </li>
+            </ul>
+          </section>
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <span class="example-num">example6</span>
+          <pre><code class="javascript" data-trim>
+var people = [...];
+
+function getAttribute(attributeName) {
+  return function(obj) {
+    return obj[attributeName];
+  }
+}
+
+
+people.map(getAttribute('first_name'));
+// ['Josh', 'Lindsey', 'Ellie', 'Addie']
+
+          </code></pre>
+          <ul>
+            <li class="fragment fade-in">Get used to this style. Functional JS just looks like functions passed to
+              functions with some string or array mixed in. This might seem weird at first but you will adjust with use.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Library based helper functions</h2>
+          <ul>
+            <li>flow(compose)</li>
+            <li>curry</li>
+            <li>map, reduce, filter</li>
+          </ul>
+
+          <p class="fragment fade-in">
+          </p>
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <span class="example-num">example7</span>
+          <pre><code class="javascript" data-trim style="max-height: 800px">
+var people = [...];
+function strLength(str) {
+  return str.length;
+}
+
+function getAttribute(attributeName) {
+  return function(obj) {
+    return obj[attributeName];
+  }
+}
+
+var results = people
+  .map(getAttribute('first_name'))
+  .map(strLength);
+
+// [4, 7, 5, 5]
+          </code></pre>
+          <ul>
+            <li style="visibility: hidden">&nbsp;</li>
+            <li style="visibility: hidden">&nbsp;</li>
+            <li style="visibility: hidden">&nbsp;</li>
+          </ul>
+        </section>
+        <section data-transition="fade-in slide-out">
+          <span class="example-num">example8</span>
+          <pre><code class="javascript" data-trim style="max-height: 800px">
+var people = [...];
+function strLength(str) {
+  return str.length;
+}
+
+var getAttribute = curry(function(attributename, obj) {
+  return obj[attributename];
+});
+
+var results = people
+  .map(getAttribute('first_name'))
+  .map(strLength);
+
+
+
+// [4, 7, 5, 5]
+          </code></pre>
+          <ul>
+            <li class="fragment fade-in">The <i>curry</i> function takes a function as its argument and returns a curried version of that function.</li>
+            <li style="visibility: hidden">&nbsp;</li>
+          </ul>
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <span class="example-num">example9</span>
+          <pre><code class="javascript" data-trim style="max-height: 800px">
+var people = [...];
+function strLength(str) {
+  return str.length;
+}
+
+var getAttribute = curry(function(attributename, obj) {
+  return obj[attributename];
+});
+
+var results = people
+  .map(flow(
+    getAttribute('first_name'),
+    strLength
+  ));
+
+// [4, 7, 5, 5]
+          </code></pre>
+          <ul>
+            <li class="fragment fade-in"><b>Function Composition</b> is combining
+            multiple functions where the output of one function is the input to another.</li>
+            <li style="visibility: hidden">&nbsp;</li>
+          </ul>
+        </section>
+
+        <section data-transition="fade-in fade-out">
+          <span class="example-num">example10</span>
+          <pre><code class="javascript" data-trim style="max-height: 800px">
+var people = [...];
+function strLength(str) {
+  return str.length;
+}
+
+var getAttribute = curry(function(attributeName, obj) {
+  return obj[attributeName];
+});
+
+var results = map(
+  flow(
+    getAttribute('first_name'),
+    strLength
+  ), people);
+
+// [4, 7, 5, 5]
+          </code></pre>
+          <ul>
+            <li><b>Function Composition</b> is combining
+            multiple functions where the output of one function is the input to another.</li>
+            <li class="fragment fade-in">Why use <i>map</i> over <i>Array.map?</i></li>
+          </ul>
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <span class="example-num">example11</span>
+          <pre><code class="javascript" data-trim style="max-height: 800px">
+var people = [...];
+function strLength(str) {
+  return str.length;
+}
+
+var mapToNameLength = map(
+  flow(
+    get('first_name'),
+    strLength
+  ));
+
+
+var results = mapToNameLength(people);
+
+
+// [4, 7, 5, 5]
+          </code></pre>
+          <ul>
+            <li>Currying<br/><br/><br/></li>
+          </ul>
+        </section>
+
+        <section>
+        </section>
+
+        <section>
+          <h2>Adopting FP</h2>
+          <ul>
+            <li class="fragment fade-in">Use a helper library like Lodash/fp or Ramda</li>
+            <li class="fragment fade-in">Ensure your team is comfortable with the approach</li>
+            <li class="fragment fade-in">Not ready? just write <b>pure functions</b> and use es5 array functions like :<i>map</i>, <i>reduce</i>, <i>filter</i>, <i>find</i></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Helper Libs</h2>
+          <ul>
+            <li><a href="https://github.com/lodash/lodash/wiki/FP-Guide">lodash/fp</a></li>
+            <li><a href="http://ramdajs.com/">Ramda</a></li>
+            <li><a href="https://facebook.github.io/immutable-js/">ImmutableJS</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Questions?</h2>
+          <br/>
+          <ul>
+            <li>
+              <a href="https://github.com/hemanth/functional-programming-jargon">https://github.com/hemanth/functional-programming-jargon</a>
+            </li>
+            <li>
+              <a href="http://eloquentjavascript.net">http://eloquentjavascript.net</a>
+            </li>
+            <li>
+              <a href="http://scott.sauyet.com/Javascript/Talk/FunctionalProgramming/">http://scott.sauyet.com/Javascript/Talk/FunctionalProgramming</a>
+            </li>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+    var people = [
+      { first_name: 'Josh',    last_name: 'Thomas', age: 35, occupation: 'Developer' },
+      { first_name: 'Lindsey', last_name: 'Thomas', age: 35, occupation: 'Project Manager' },
+      { first_name: 'Ellie',   last_name: 'Thomas', age: 2,  occupation: 'Baby'},
+      { first_name: 'Addie',   last_name: 'Thomas', age: 1,  occupation: 'Baby'}
+    ];
+
+    var techPeople = [
+      { first_name: 'Adele',   last_name: 'Goldberg',   age: 71, occupation: 'Developer' },
+      { first_name: 'Audrey',  last_name: 'Tang',       age: 35, occupation: 'Developer' },
+      { first_name: 'Bill',    last_name: 'Gates',      age: 61, occupation: 'Philanthropist' },
+      { first_name: 'Gerald',  last_name: 'Sussman',    age: 70, occupation: 'Developer' },
+      { first_name: 'Grace',   last_name: 'Hopper',     age: 85, occupation: 'Developer' },
+      { first_name: 'Guy',     last_name: 'Steele',     age: 62, occupation: 'Developer' },
+      { first_name: 'Jade',    last_name: 'Raymond',    age: 41, occupation: 'Executive' },
+      { first_name: 'Jeff',    last_name: 'Bezos',      age: 53, occupation: 'CEO' },
+      { first_name: 'Marissa', last_name: 'Mayer',      age: 41, occupation: 'CEO' },
+      { first_name: 'Mark',    last_name: 'Zuckerberg', age: 32, occupation: 'CEO' },
+      { first_name: 'Martin',  last_name: 'Odersky',    age: 58, occupation: 'Developer' },
+      { first_name: 'Simon',   last_name: 'Jones',      age: 59, occupation: 'Developer' },
+      { first_name: 'Susan',   last_name: 'Wojcicki',   age: 48, occupation: 'CEO' }
+    ];
+    </script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
