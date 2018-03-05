@@ -1,6 +1,6 @@
 {
-  "name": "@stencil/starter",
-  "private": true,
+  "name": "github-web-components",
+  "private": false,
   "version": "0.0.1",
   "description": "Stencil App Starter",
   "files": [
@@ -31,7 +31,7 @@
     "type": "git",
     "url": "git+https://github.com/ionic-team/stencil-app-starter.git"
   },
-  "author": "Ionic Team",
+  "author": "Josh Thomas",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ionic-team/stencil"
