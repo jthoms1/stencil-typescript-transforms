@@ -13,7 +13,7 @@
 
     <!-- Code syntax highlighting -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
-    <script src="dist/dev-transforms.js"></script>
+    <script src="./node_modules/github-web-components/dist/github-web-components.js"></script>
 
     <!-- Printing and PDF exports -->
     <script>
@@ -26,6 +26,10 @@
     </script>
 
     <style>
+
+      :root {
+        --stencil-grpe: rgb(88, 81, 255);
+      }
       .reveal section img.nostyle {
           background: none;
           border: none;
@@ -69,16 +73,23 @@
         <section>
           <h3>Building StencilJS with TypeScript</h3>
           <p>
-            <hello-there userid="jthoms1"></hello-there>
+            <github-intro userid="jthoms1"></github-intro>
           </p>
         </section>
 
         <section>
           <h2>About Me</h2>
+          <ul>
+            <li>Senior Developer at Ionic</li>
+            <li>One of the creators of StencilJS</li>
+          </ul>
+          <img class="fragment" src="images/kids.jpg" />
         </section>
 
         <section>
-          <h2>My Intro to TypeScript</h2>
+          <h2 class="fragment fade-out">I ❤ TypeScript</h2>
+          <h2 class="fragment fade-in fade-out">I ️💔 TypeScript</h2>
+          <h2 class="fragment fade-in">I ❤ TypeScript</h2>
         </section>
 
         <section>
@@ -91,11 +102,21 @@
         </section>
 
         <section>
-          <h2>The Next Release of Ionic</h2>
+          <h2>The JS ecosystem is changing</h2>
+          <ul>
+            <li>'what is best framework?' is now 'which do you prefer?'</li>
+            <li>Components that will work with any framework <span class="fragment">or no framework</span></li>
+            <li>Write once use everywhere</li>
+          </ul>
         </section>
 
         <section>
           <h2>StencilJS Born out of Necessity</h2>
+          <ul>
+            <li>Realized our work could be valuable to others</li>
+            <li>Stencil is a 'compiler' that generates Web Components</li>
+            <li>Developer Experience was our number 2 priority <span class="fragment">behind performance</span></li>
+          </ul>
         </section>
 
         <section>
@@ -111,291 +132,58 @@
 
         <section>
           <h2>StencilJS</h2>
+          <p>Components need to</p>
           <ul>
-            <li></li>
-          </ul>
-        </section>
-
-        <section data-transition="fade-in fade-out">
-          <section>
-            <span class="example-num">example3</span>
-            <pre><code class="javascript" data-trim>
-var people = [...];
-
-
-
-
-
-var names = people.map(function(person) {
-  return person.first_name;
-});
-
-// ['Josh', 'Lindsey', 'Ellie', 'Addie']
-          </code></pre>
-            <ul>
-              <li class="fragment fade-in">The <i>map</i> array method creates a new array with the results of calling a provided function on every element.</li>
-              <li class="fragment fade-in">ES5 Array functions: <i>map, reduce, filter, find</i></li>
-              <li class="fragment fade-in"><b>Pure Function</b> (no side effects)</li>
-            </ul>
-          </section>
-          <section>
-            <ul>
-              <li>A <b>Pure Function</b> is a function where the return value is only determined by its input values, without observable side effects.</li>
-            </ul>
-          </section>
-        </section>
-
-        <section data-transition="fade-in fade-out">
-          <span class="example-num">example4</span>
-          <pre><code class="javascript" data-trim>
-var people = [...];
-
-function getAttribute(attributeName, obj) {
-  return obj[attributeName];
-}
-
-
-people.map(function(person) {
-  return getAttribute('first_name', person);
-});
-// ['Josh', 'Lindsey', 'Ellie', 'Addie']
-          </code></pre>
-          <ul>
-            <li>The <i>map</i> array method creates a new array with the results of calling a provided function on every element.</li>
-            <li>ES5 Array functions: <i>map, reduce, filter, find</i></li>
-            <li><b>Pure Function</b> (no side effects)</li>
-          </ul>
-        </section>
-
-        <section data-transition="fade-in slide-out">
-          <section>
-            <span class="example-num">example5</span>
-            <pre><code class="javascript" data-trim>
-var people = [...];
-
-function getAttribute(attributeName) {
-  return function(obj) {
-    return obj[attributeName];
-  }
-}
-var getName = getAttribute('first_name');
-
-people.map(getName);
-// ['Josh', 'Lindsey', 'Ellie', 'Addie']
-            </code></pre>
-            <ul>
-              <li class="fragment fade-in">The <i>getAttribute</i> function got more useful and generalized
-                through the use of a technic called <b>currying</b>.<br/><br/><br/></li>
-            </ul>
-          </section>
-          <section>
-            <ul>
-              <li><b>Currying</b> is changing a function that takes multiple
-              arguments into a sequence of functions with the same result. </li>
-            </ul>
-          </section>
-        </section>
-
-        <section data-transition="fade-in slide-out">
-          <span class="example-num">example6</span>
-          <pre><code class="javascript" data-trim>
-var people = [...];
-
-function getAttribute(attributeName) {
-  return function(obj) {
-    return obj[attributeName];
-  }
-}
-
-
-people.map(getAttribute('first_name'));
-// ['Josh', 'Lindsey', 'Ellie', 'Addie']
-
-          </code></pre>
-          <ul>
-            <li class="fragment fade-in">Get used to this style. Functional JS just looks like functions passed to
-              functions with some string or array mixed in. This might seem weird at first but you will adjust with use.</li>
+            <li>Have excellent developer ergonomics</li>
+            <li>Be able to be lazy loaded</li>
+            <li>Be able to stand on their own</li>
+            <li>Be type safe</li>
+            <li>Be as tiny as possible</li>
           </ul>
         </section>
 
         <section>
-          <h2>Library based helper functions</h2>
-          <ul>
-            <li>flow(compose)</li>
-            <li>curry</li>
-            <li>map, reduce, filter</li>
-          </ul>
-
-          <p class="fragment fade-in">
-          </p>
-        </section>
-
-        <section data-transition="fade-in slide-out">
-          <span class="example-num">example7</span>
-          <pre><code class="javascript" data-trim style="max-height: 800px">
-var people = [...];
-function strLength(str) {
-  return str.length;
-}
-
-function getAttribute(attributeName) {
-  return function(obj) {
-    return obj[attributeName];
-  }
-}
-
-var results = people
-  .map(getAttribute('first_name'))
-  .map(strLength);
-
-// [4, 7, 5, 5]
-          </code></pre>
-          <ul>
-            <li style="visibility: hidden">&nbsp;</li>
-            <li style="visibility: hidden">&nbsp;</li>
-            <li style="visibility: hidden">&nbsp;</li>
-          </ul>
-        </section>
-        <section data-transition="fade-in slide-out">
-          <span class="example-num">example8</span>
-          <pre><code class="javascript" data-trim style="max-height: 800px">
-var people = [...];
-function strLength(str) {
-  return str.length;
-}
-
-var getAttribute = curry(function(attributename, obj) {
-  return obj[attributename];
-});
-
-var results = people
-  .map(getAttribute('first_name'))
-  .map(strLength);
-
-
-
-// [4, 7, 5, 5]
-          </code></pre>
-          <ul>
-            <li class="fragment fade-in">The <i>curry</i> function takes a function as its argument and returns a curried version of that function.</li>
-            <li style="visibility: hidden">&nbsp;</li>
-          </ul>
-        </section>
-
-        <section data-transition="fade-in slide-out">
-          <span class="example-num">example9</span>
-          <pre><code class="javascript" data-trim style="max-height: 800px">
-var people = [...];
-function strLength(str) {
-  return str.length;
-}
-
-var getAttribute = curry(function(attributename, obj) {
-  return obj[attributename];
-});
-
-var results = people
-  .map(flow(
-    getAttribute('first_name'),
-    strLength
-  ));
-
-// [4, 7, 5, 5]
-          </code></pre>
-          <ul>
-            <li class="fragment fade-in"><b>Function Composition</b> is combining
-            multiple functions where the output of one function is the input to another.</li>
-            <li style="visibility: hidden">&nbsp;</li>
-          </ul>
-        </section>
-
-        <section data-transition="fade-in fade-out">
-          <span class="example-num">example10</span>
-          <pre><code class="javascript" data-trim style="max-height: 800px">
-var people = [...];
-function strLength(str) {
-  return str.length;
-}
-
-var getAttribute = curry(function(attributeName, obj) {
-  return obj[attributeName];
-});
-
-var results = map(
-  flow(
-    getAttribute('first_name'),
-    strLength
-  ), people);
-
-// [4, 7, 5, 5]
-          </code></pre>
-          <ul>
-            <li><b>Function Composition</b> is combining
-            multiple functions where the output of one function is the input to another.</li>
-            <li class="fragment fade-in">Why use <i>map</i> over <i>Array.map?</i></li>
-          </ul>
-        </section>
-
-        <section data-transition="fade-in slide-out">
-          <span class="example-num">example11</span>
-          <pre><code class="javascript" data-trim style="max-height: 800px">
-var people = [...];
-function strLength(str) {
-  return str.length;
-}
-
-var mapToNameLength = map(
-  flow(
-    get('first_name'),
-    strLength
-  ));
-
-
-var results = mapToNameLength(people);
-
-
-// [4, 7, 5, 5]
-          </code></pre>
-          <ul>
-            <li>Currying<br/><br/><br/></li>
-          </ul>
+          <h2>TypeScript powers the Stencil Compiler</h2>
         </section>
 
         <section>
+          <h2>Diving into the undocumented APIs of TypeScript</h2>
+          <img src="images/dive-fail.gif"/>
         </section>
 
         <section>
-          <h2>Adopting FP</h2>
-          <ul>
-            <li class="fragment fade-in">Use a helper library like Lodash/fp or Ramda</li>
-            <li class="fragment fade-in">Ensure your team is comfortable with the approach</li>
-            <li class="fragment fade-in">Not ready? just write <b>pure functions</b> and use es5 array functions like :<i>map</i>, <i>reduce</i>, <i>filter</i>, <i>find</i></li>
-          </ul>
+          Stencil code
         </section>
 
-        <section>
-          <h2>Helper Libs</h2>
-          <ul>
-            <li><a href="https://github.com/lodash/lodash/wiki/FP-Guide">lodash/fp</a></li>
-            <li><a href="http://ramdajs.com/">Ramda</a></li>
-            <li><a href="https://facebook.github.io/immutable-js/">ImmutableJS</a></li>
-          </ul>
-        </section>
 
-        <section>
-          <h2>Questions?</h2>
-          <br/>
-          <ul>
-            <li>
-              <a href="https://github.com/hemanth/functional-programming-jargon">https://github.com/hemanth/functional-programming-jargon</a>
-            </li>
-            <li>
-              <a href="http://eloquentjavascript.net">http://eloquentjavascript.net</a>
-            </li>
-            <li>
-              <a href="http://scott.sauyet.com/Javascript/Talk/FunctionalProgramming/">http://scott.sauyet.com/Javascript/Talk/FunctionalProgramming</a>
-            </li>
-        </section>
+        Metadata Collection
+
+
+        Purge
+
+
+        Conditional Transforms
+
+
+
+        Upgrades
+
+
+
+        Documentation generation
+
+
+        Component Types
+
+
+        How does it integrate
+
+
+        Next Steps
+
+
+        Thank You
+
 
       </div>
     </div>

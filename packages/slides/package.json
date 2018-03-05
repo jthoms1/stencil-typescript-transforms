@@ -10,6 +10,7 @@
     "github-web-components": "^0.0.1"
   },
   "scripts": {
+    "start": "stencil-dev-server --ssl --root .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

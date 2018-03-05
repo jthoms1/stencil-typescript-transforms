@@ -15,29 +15,29 @@ declare global {
 
 
 import {
-  HelloThere as HelloThere
-} from './components/hello-there/hello-there';
+  GithubIntro as GithubIntro
+} from './components/github-intro/github-intro';
 
 declare global {
-  interface HTMLHelloThereElement extends HelloThere, HTMLStencilElement {
+  interface HTMLGithubIntroElement extends GithubIntro, HTMLStencilElement {
   }
-  var HTMLHelloThereElement: {
-    prototype: HTMLHelloThereElement;
-    new (): HTMLHelloThereElement;
+  var HTMLGithubIntroElement: {
+    prototype: HTMLGithubIntroElement;
+    new (): HTMLGithubIntroElement;
   };
   interface HTMLElementTagNameMap {
-    "hello-there": HTMLHelloThereElement;
+    "github-intro": HTMLGithubIntroElement;
   }
   interface ElementTagNameMap {
-    "hello-there": HTMLHelloThereElement;
+    "github-intro": HTMLGithubIntroElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "hello-there": JSXElements.HelloThereAttributes;
+      "github-intro": JSXElements.GithubIntroAttributes;
     }
   }
   namespace JSXElements {
-    export interface HelloThereAttributes extends HTMLAttributes {
+    export interface GithubIntroAttributes extends HTMLAttributes {
       userid?: string;
     }
   }

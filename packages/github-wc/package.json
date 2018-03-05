@@ -6,7 +6,7 @@
   "files": [
     "dist/"
   ],
-  "main": "dist/dev-transforms.js",
+  "main": "dist/github-web-components.js",
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "scripts": {

@@ -1,4 +1,4 @@
-import { Component, Prop, State } from '@stencil/core';
+import { Component, Prop, State, Watch } from '@stencil/core';
 
 export interface GithubData {
   login: string;
@@ -29,12 +29,17 @@ export class GithubIntro {
   @Prop() userid: string = '';
   @State() userData: GithubData;
 
-  componentWillLoad() {
-    fetch(`https://api.github.com/users/${this.userid}`)
+  @Watch('userid')
+  fetchGithubData(userid) {
+    fetch(`https://api.github.com/users/${userid}`)
       .then(rsp => rsp.json())
       .then((data: GithubData) => {
         this.userData = data;
       });
+  }
+
+  componentWillLoad() {
+    this.fetchGithubData(this.userid);
   }
 
   render() {
@@ -44,9 +49,14 @@ export class GithubIntro {
     return (
       <div>
         <small>
-          {this.userData.name} / <a href={this.userData.html_url}>@{this.userData.login}</a>
+          {this.userData.name ?
+            `${this.userData.name} / ` :
+            null}
+          <a href={this.userData.html_url}>@{this.userData.login}</a>
         </small>
-        <img class="roundup" src={this.userData.avatar_url} alt="gravatar" />
+        {this.userData.avatar_url ?
+          <img class="roundup" src={this.userData.avatar_url} alt="gravatar" /> :
+          null}
       </div>
     );
   }

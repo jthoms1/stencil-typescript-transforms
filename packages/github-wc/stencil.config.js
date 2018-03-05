@@ -1,10 +1,10 @@
 exports.config = {
-  namespace: "dev-transforms",
+  namespace: "github-web-components",
   generateDistribution: true,
   generateWWW: false
 };
 
 exports.devServer = {
-  root: 'slides',
+  root: '../slides',
   watchGlob: '**/**'
 };
