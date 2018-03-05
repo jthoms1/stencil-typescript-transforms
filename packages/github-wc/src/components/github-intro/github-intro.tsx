@@ -7,11 +7,11 @@ export interface GithubData {
   name: string;
   company: string;
   html_url: string;
-  bio: string
+  bio: string;
 }
 
 @Component({
-  tag: 'hello-there',
+  tag: 'github-intro',
   scoped: true,
   styles: `
     img.roundup {
@@ -24,7 +24,7 @@ export interface GithubData {
     }
   `
 })
-export class HelloThere {
+export class GithubIntro {
 
   @Prop() userid: string = '';
   @State() userData: GithubData;
