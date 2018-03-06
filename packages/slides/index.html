@@ -85,10 +85,10 @@
           </ul>
           <img class="fragment" src="images/kids.jpg" />
           <aside class="notes">
-            Josh Thomas
-            Senior Developer at Ionic
-            One of the creators of StencilJS
-            Today I will be talking about how we built StencilJS on TypeScript
+            <ul>
+            <li>Senior Developer at Ionic
+            <li>One of the creators of StencilJS
+            <li>Today I will be talking about how we built StencilJS on TypeScript
           </aside>
         </section>
 
@@ -97,11 +97,11 @@
           <h2 class="fragment fade-in fade-out">I ️💔 TypeScript</h2>
           <h2 class="fragment fade-in">I ❤ TypeScript</h2>
           <aside class="notes">
-            I joined Ionic 2 years ago.
-            I was writing primarily React applications before joining Ionic
-            My preferred experience was using Babel for my JSX compilation and esnext features, and eslint to keep some code consistency.
-            6 months after started I was tasked with rewriting our CLI. Of course it was going to be written in Typescript.
-            It took about 2 weeks of constantly fighting with the compiler before I started to feel comfortable and started embracing it’s type system. I would still consider myself new to Typescript but I have been writing it solely for the last 1 ½ years.
+            <li>I joined Ionic 2 years ago.
+            <li>I was writing primarily React applications before joining Ionic
+            <li>My preferred experience was using Babel for my JSX compilation and esnext features, and eslint to keep some code consistency.
+            <li>6 months after started I was tasked with rewriting our CLI. Of course it was going to be written in Typescript.
+            <li>It took about 2 weeks of constantly fighting with the compiler before I started to feel comfortable and started embracing it’s type system. I would still consider myself new to Typescript but I have been writing it solely for the last 1 ½ years.
           </aside>
         </section>
 
@@ -113,12 +113,12 @@
             <li>TypeScript</li>
           </ul>
           <aside class="notes">
-            Framework/Component Library for mobile applications (Vanity metric) and we offer supporting services to these application developers.
-            Cross platform UI kit.
-            Bootstrap for mobile.
-            Software for developers so that they can create amazing web based applications.
-            Component library/framework built originally on AngularJS and then Angular /w TypeScript.
-            Typescript became the language of Ionic after we adopted it for our v2 release of the framework, untyped JS wasn’t written anymore at the company. Our front-end libraries, our node code, our websites, our webapps, etc all in TypeScript.
+            <li>Framework/Component Library for mobile applications (Vanity metric) and we offer supporting services to these application developers.
+            <li>Cross platform UI kit.
+            <li>Bootstrap for mobile.
+            <li>Software for developers so that they can create amazing web based applications.
+            <li>Component library/framework built originally on AngularJS and then Angular /w TypeScript.
+            <li>Typescript became the language of Ionic after we adopted it for our v2 release of the framework, untyped JS wasn’t written anymore at the company. Our front-end libraries, our node code, our websites, our webapps, etc all in TypeScript.
           </aside>
         </section>
 
@@ -130,9 +130,9 @@
             <li>Write once use everywhere</li>
           </ul>
           <aside class="notes">
-            What is the best framework, is no longer important.  The question is which framework do you prefer and we want to provide our components to devs no matter the framework they prefer.
-            Enable components to work with any framework (or no framework at all)
-            We wanted to have Ionic written in one format and have it work in any website or web application.
+            <li>What is the best framework, is no longer important.  The question is which framework do you prefer and we want to provide our components to devs no matter the framework they prefer.
+            <li>Enable components to work with any framework (or no framework at all)
+            <li>We wanted to have Ionic written in one format and have it work in any website or web application.
           </aside>
         </section>
 
@@ -144,11 +144,11 @@
             <li>Developer Experience was our number 2 priority <span class="fragment">behind performance</span></li>
           </ul>
           <aside class="notes">
-            We didn’t plan on building a new tool, we just wanted to improve Ionic, but after a few months of work we realized that what we were building would be valuable to other software teams as well.
-            We took the tool and abstracted it into a separate project from Ionic and we called it Stencil.
-            Stencil is a compiler that generates Web Component
-            Generates tiny, highly optimized web components.
-            Quick Demo of a stencil app  (FIBER DEMO)
+            <li>We didn’t plan on building a new tool, we just wanted to improve Ionic, but after a few months of work we realized that what we were building would be valuable to other software teams as well.
+            <li>We took the tool and abstracted it into a separate project from Ionic and we called it Stencil.
+            <li>Stencil is a compiler that generates Web Component
+            <li>Generates tiny, highly optimized web components.
+            <li>Quick Demo of a stencil app  (FIBER DEMO)
           </aside>
         </section>
 
@@ -162,7 +162,7 @@
             <li>JSX</li>
           </ul>
           <aside>
-            tell what each feature actually is
+            <li>tell what each feature actually is
           </aside>
         </section>
 
@@ -177,13 +177,13 @@
             <li>Be as tiny as possible</li>
           </ul>
           <aside class="notes">
-            Inspiration came from a lot of places: Angular, React, Vue, etc.
-            Provide excellent developer experience/ergonomics.
-            Be standalone, the code should have no references direct dependencies on the Stencil compiler.
-            Be type safe.
-            export types so that if a dev wants to use a component with any framework + typescript it should also allow type safety.
-            Be as tiny as possible with as few polyfills as possible.
-            Components should be able to work with future versions of the stencil compiler with as few breaking changes as possible. Upgrades
+            <li>Inspiration came from a lot of places: Angular, React, Vue, etc.
+            <li>Provide excellent developer experience/ergonomics.
+            <li>Be standalone, the code should have no references direct dependencies on the Stencil compiler.
+            <li>Be type safe.
+            <li>export types so that if a dev wants to use a component with any framework + typescript it should also allow type safety.
+            <li>Be as tiny as possible with as few polyfills as possible.
+            <li>Components should be able to work with future versions of the stencil compiler with as few breaking changes as possible. Upgrades
           </aside>
         </section>
 
@@ -196,8 +196,8 @@
         <section>
           <h2>TypeScript powers the Stencil Compiler</h2>
           <aside class="notes">
-            We realized that in order to accomplish what we wanted we needed more than just language support, we also need our own compiler.
-            We were already using Typescript so the choice was obvious to just write some AST transforms using the provided Compiler API.
+            <li>We realized that in order to accomplish what we wanted we needed more than just language support, we also need our own compiler.
+            <li>We were already using Typescript so the choice was obvious to just write some AST transforms using the provided Compiler API.
           </aside>
         </section>
 
@@ -212,7 +212,7 @@
           Why would you do this
           How does it work
           <aside>
-            All the data we collected during the metadata collection lets add that back to the component in a straight forward way
+            <li>All the data we collected during the metadata collection lets add that back to the component in a straight forward way
           </aside>
         </section>
 
@@ -222,8 +222,8 @@
           How does it work
           How does it affect the example
           <aside class="notes">
-            removes all decorators that are specific to stencil
-            Typescript decorators have some ugly extra code that we don’t need
+            <li>removes all decorators that are specific to stencil
+            <li>Typescript decorators have some ugly extra code that we don’t need
           </aside>
         </section>
 
@@ -233,7 +233,7 @@
           How does it work
           How does it affect the example
           <aside class="notes">
-            Based on features used we may not need to bundle all of stencil’s runtime just those features that are specified by the code.
+            <li>Based on features used we may not need to bundle all of stencil’s runtime just those features that are specified by the code.
           </aside>
         </section>
 
@@ -242,8 +242,8 @@
           Explain how we can upgrade
           Example of text we show when upgrading
           <aside class="notes">
-            Read files generated by stencil and decide how they need to change and then also let the dev know that we did this for them.
-            ontrol the output of our compiled code and versioned to our compiler means we know exactly how the api changed and then the codemods that need to occur to ensure it works with newer runtime code.
+            <li>Read files generated by stencil and decide how they need to change and then also let the dev know that we did this for them.
+            <li>ontrol the output of our compiled code and versioned to our compiler means we know exactly how the api changed and then the codemods that need to occur to ensure it works with newer runtime code.
           </aside>
         </section>
 
@@ -252,7 +252,7 @@
           Almost free
           Example of output and how it relates to collection
           <aside class="notes">
-            Similar to the idea of TypeDoc but very specific to components and their own usage
+            <li>Similar to the idea of TypeDoc but very specific to components and their own usage
           </aside>
         </section>
 
@@ -263,9 +263,9 @@
             <li>Integrations example</li>
           </ul>
           <aside class="notes">
-            We want the ability to have lazy loaded components and get full type support.  Globals here we come.
-            Type Safety
-            document.createElement + JSX (Preact, React, Vanilla TS)
+            <li>We want the ability to have lazy loaded components and get full type support.  Globals here we come.
+            <li>Type Safety
+            <li>document.createElement + JSX (Preact, React, Vanilla TS)
           </aside>
         </section>
 
@@ -274,7 +274,7 @@
           Docs and Testing
           Unit tests to ensure that we have full coverage and support for many frameworks
           <aside class="notes">
-              More documentation and iteration on our road to 1.0
+            <li>More documentation and iteration on our road to 1.0
           </aside>
         </section>
 
