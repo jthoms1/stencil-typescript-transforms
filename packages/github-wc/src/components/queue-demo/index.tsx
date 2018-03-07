@@ -1,4 +1,4 @@
-import { Component, Prop, Watch } from '@stencil/core';
+import { Component, Prop } from '@stencil/core';
 
 @Component({
   tag: 'queue-demo',
@@ -7,15 +7,10 @@ import { Component, Prop, Watch } from '@stencil/core';
 export class QueueDemo {
   @Prop() elapsed: number = 0;
 
-  @Watch('elapsed')
-  elapsedlog(newValue: number) {
-    console.log(newValue);
-  }
-
   seconds: number = 0;
   intervalID: number;
 
-  ionViewDidLoad() {
+  componentDidLoad() {
     var tick: Function = this.tick.bind(this);
     this.intervalID = setInterval(tick, 1000);
   }
@@ -44,7 +39,6 @@ export class QueueDemo {
   }
 
   render() {
-    console.log(this.seconds);
     return (
       <div>
         <queue-triangle

@@ -13,14 +13,6 @@ export class QueueDot {
 
   @State() hover: boolean = false;
 
-  enter() {
-    this.hover = true;
-  }
-
-  leave() {
-    this.hover = false;
-  }
-
   hostData() {
     const s = this.size * 1.3;
     const style = {
@@ -39,10 +31,8 @@ export class QueueDot {
 
     return {
       style: style,
-      on: {
-        mouseenter: this.enter.bind(this),
-        mouseleave: this.leave.bind(this)
-      },
+      onmouseenter: () => this.hover = true,
+      onmouseleave: () => this.hover = false
     };
   }
 

@@ -46,7 +46,7 @@ declare global {
 
 import {
   QueueDot as QueueDot
-} from './components/triangle-demo/dot';
+} from './components/queue-demo/dot';
 
 declare global {
   interface HTMLQueueDotElement extends QueueDot, HTMLStencilElement {
@@ -79,7 +79,7 @@ declare global {
 
 import {
   QueueDemo as QueueDemo
-} from './components/triangle-demo/index';
+} from './components/queue-demo/index';
 
 declare global {
   interface HTMLQueueDemoElement extends QueueDemo, HTMLStencilElement {
@@ -109,7 +109,7 @@ declare global {
 
 import {
   QueueTriangle as QueueTriangle
-} from './components/triangle-demo/triangle';
+} from './components/queue-demo/triangle';
 
 declare global {
   interface HTMLQueueTriangleElement extends QueueTriangle, HTMLStencilElement {

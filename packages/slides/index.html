@@ -346,8 +346,7 @@
       var start = Date.now();
       var baseEl = document.querySelector('queue-demo');
       function update() {
-        const elapsed = Date.now() - start;
-        baseEl.elapsed = elapsed;
+        baseEl.elapsed = Date.now() - start;
         requestAnimationFrame(update);
       }
       requestAnimationFrame(update);
