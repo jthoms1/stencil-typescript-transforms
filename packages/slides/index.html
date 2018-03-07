@@ -5,6 +5,8 @@
     <meta charset="utf-8">
 
     <title>Building StencilJS with TypeScript</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
@@ -29,6 +31,19 @@
 
       :root {
         --stencil-grape: rgb(88, 81, 255);
+      }
+      body {
+        background: url(images/background.jpg);
+        background-size: cover;
+      }
+      body > div.reveal {
+        font-family: 'Poppins', sans-serif;
+        color: #B9C0D2;
+      }
+      .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 {
+        font-family: 'Montserrat', sans-serif;
+        color: #FFF;
+        text-transform: none;
       }
       .reveal section img.nostyle {
           background: none;
@@ -64,7 +79,7 @@
     <![endif]-->
   </head>
 
-  <body>
+  <body style="background-image: 'images/background.jpg'">
 
     <div class="reveal">
 
@@ -92,9 +107,9 @@
         </section>
 
         <section>
-          <h2 class="fragment fade-out">I ❤ TypeScript</h2>
-          <h2 class="fragment fade-in fade-out">I ️💔 TypeScript</h2>
-          <h2 class="fragment fade-in">I ❤ TypeScript</h2>
+          <h2 class="fragment fade-out">I <img width="45" class="nostyle" src="images/heart.png"/> TypeScript</h2>
+          <h2 class="fragment fade-in">I <img width="45" class="nostyle" src="images/broken-heart.png"/> TypeScript</h2>
+          <h2 class="fragment fade-in">I <img width="45" class="nostyle" src="images/heart.png"/> TypeScript</h2>
           <aside class="notes">
             <li>I joined Ionic 2 years ago.
             <li>I was writing primarily React applications before joining Ionic
@@ -361,7 +376,7 @@
         history: true,
         center: true,
 
-        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        transition: 'none', // none/fade/slide/convex/concave/zoom
 
         // Optional reveal.js plugins
         dependencies: [
