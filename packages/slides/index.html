@@ -204,28 +204,29 @@
             <li>Provide excellent developer experience/ergonomics.
             <li>Be standalone, the code should have no references direct dependencies on the Stencil compiler.
             <li>Be type safe.
-            <li>export types so that if a dev wants to use a component with any framework + typescript it should also allow type safety.
+            <li>export types so that if a dev wants to use a component with any framework + typescript it
+              should also allow type safety.
             <li>Be as tiny as possible with as few polyfills as possible.
-            <li>Components should be able to work with future versions of the stencil compiler with as few breaking changes as possible. Upgrades
+            <li>Components should be able to work with future versions of the stencil compiler with as few
+              breaking changes as possible. Upgrades
           </aside>
         </section>
 
         <section>
           <h2>What does a component look like</h2>
           Show picture of code.
-
-          Lets show how good the ergonomics are
-          Component Decorator - similar to Angular information about the component its styles show type def
-          Prop Decorator => Define what attributes/properties can be passed to this component... with Types.
-          Watch Decorator => Method provided to execute with new, old value on change
-          State Decorator => Reactive (Vuejs)
-          render Method => JSX (React/Preact)
-
-          Code Example from the repo
+          <aside class="notes">
+            <li>Lets show how good the ergonomics are
+            <li>Component Decorator - similar to Angular information about the component its styles show type def
+            <li>Prop Decorator => Define what attributes/properties can be passed to this component... with Types.
+            <li>Watch Decorator => Method provided to execute with new, old value on change
+            <li>State Decorator => Reactive (Vuejs)
+            <li>render Method => JSX (React/Preact)
+          </aside>
         </section>
 
         <section>
-          <h2>Keeping code small and portable we needed to compiler down to web components.</h2>
+          <h2>Keeping code small and portable we needed to compile down to web components.</h2>
           <h2>TypeScript powers the Stencil Compiler</h2>
           <aside class="notes">
             <li>We realized that in order to accomplish what we wanted we needed more than just
@@ -249,7 +250,6 @@
           - Examples would be tagName, all style data, what are possible properties, well mostly all decorators.
           How does it work
           - We walk the tree and collect the information and normalize the data based on some usage rules.
-          -
           <aside>
             <li>All the data we collected during the metadata collection lets add that back to the component in a straight forward way
           </aside>
@@ -325,10 +325,9 @@
 
         <section>
           <h2>Next Steps</h2>
-          Docs and Testing
-          Unit tests to ensure that we have full coverage and support for many frameworks
           <aside class="notes">
             <li>More documentation and iteration on our road to 1.0
+            <li>Unit tests to ensure that we have full coverage and support for many frameworks
           </aside>
         </section>
 
