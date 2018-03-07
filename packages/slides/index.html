@@ -340,8 +340,19 @@
 
     <script src="lib/js/head.min.js"></script>
     <script src="js/reveal.js"></script>
-    <script>
 
+    <script type="text/javascript">
+      var start = Date.now();
+      var baseEl = document.querySelector('queue-demo');
+      function update() {
+        const elapsed = Date.now() - start;
+        baseEl.elapsed = elapsed;
+        requestAnimationFrame(update);
+      }
+      requestAnimationFrame(update);
+    </script>
+
+    <script>
       // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({

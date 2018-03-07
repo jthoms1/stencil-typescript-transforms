@@ -43,4 +43,100 @@ declare global {
   }
 }
 
+
+import {
+  QueueDot as QueueDot
+} from './components/triangle-demo/dot';
+
+declare global {
+  interface HTMLQueueDotElement extends QueueDot, HTMLStencilElement {
+  }
+  var HTMLQueueDotElement: {
+    prototype: HTMLQueueDotElement;
+    new (): HTMLQueueDotElement;
+  };
+  interface HTMLElementTagNameMap {
+    "queue-dot": HTMLQueueDotElement;
+  }
+  interface ElementTagNameMap {
+    "queue-dot": HTMLQueueDotElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "queue-dot": JSXElements.QueueDotAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface QueueDotAttributes extends HTMLAttributes {
+      size?: number;
+      text?: string;
+      x?: number;
+      y?: number;
+    }
+  }
+}
+
+
+import {
+  QueueDemo as QueueDemo
+} from './components/triangle-demo/index';
+
+declare global {
+  interface HTMLQueueDemoElement extends QueueDemo, HTMLStencilElement {
+  }
+  var HTMLQueueDemoElement: {
+    prototype: HTMLQueueDemoElement;
+    new (): HTMLQueueDemoElement;
+  };
+  interface HTMLElementTagNameMap {
+    "queue-demo": HTMLQueueDemoElement;
+  }
+  interface ElementTagNameMap {
+    "queue-demo": HTMLQueueDemoElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "queue-demo": JSXElements.QueueDemoAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface QueueDemoAttributes extends HTMLAttributes {
+      elapsed?: number;
+    }
+  }
+}
+
+
+import {
+  QueueTriangle as QueueTriangle
+} from './components/triangle-demo/triangle';
+
+declare global {
+  interface HTMLQueueTriangleElement extends QueueTriangle, HTMLStencilElement {
+  }
+  var HTMLQueueTriangleElement: {
+    prototype: HTMLQueueTriangleElement;
+    new (): HTMLQueueTriangleElement;
+  };
+  interface HTMLElementTagNameMap {
+    "queue-triangle": HTMLQueueTriangleElement;
+  }
+  interface ElementTagNameMap {
+    "queue-triangle": HTMLQueueTriangleElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "queue-triangle": JSXElements.QueueTriangleAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface QueueTriangleAttributes extends HTMLAttributes {
+      s?: number;
+      seconds?: number;
+      x?: number;
+      y?: number;
+    }
+  }
+}
+
 declare global { namespace JSX { interface StencilJSX {} } }

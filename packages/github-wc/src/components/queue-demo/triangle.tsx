@@ -27,7 +27,7 @@ export class QueueTriangle {
     }
     s = s / 2;
 
-    var slowDown = true;
+    var slowDown = false;
     if (slowDown) {
       var e = performance.now() + 0.8;
       while (performance.now() < e) {
