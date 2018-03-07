@@ -5,8 +5,8 @@
     <meta charset="utf-8">
 
     <title>Building StencilJS with TypeScript</title>
-    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
@@ -40,16 +40,25 @@
         font-family: 'Poppins', sans-serif;
         color: #B9C0D2;
       }
+      .right-info-img {
+        width: 100px;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      .swapgroup .fragment:not(.current-fragment) {
+        display: none;
+      }
       .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 {
         font-family: 'Montserrat', sans-serif;
         color: #FFF;
         text-transform: none;
       }
       .reveal section img.nostyle {
-          background: none;
-          border: none;
-          box-shadow: none;
-          margin: 0;
+        background: none;
+        border: none;
+        box-shadow: none;
+        margin: 0;
       }
       .example-num {
         position: absolute;
@@ -98,7 +107,6 @@
             <li>Senior Developer at Ionic</li>
             <li>One of the creators of StencilJS</li>
           </ul>
-          <img class="fragment" src="images/kids.jpg" />
           <aside class="notes">
             <li>Senior Developer at Ionic
             <li>One of the creators of StencilJS
@@ -106,10 +114,25 @@
           </aside>
         </section>
 
-        <section>
-          <h2 class="fragment fade-out">I <img width="45" class="nostyle" src="images/heart.png"/> TypeScript</h2>
-          <h2 class="fragment fade-in">I <img width="45" class="nostyle" src="images/broken-heart.png"/> TypeScript</h2>
-          <h2 class="fragment fade-in">I <img width="45" class="nostyle" src="images/heart.png"/> TypeScript</h2>
+        <section data-transition="zoom">
+          <img src="images/kids.jpg" />
+        </section>
+
+        <section class="swapgroup">
+          <h2>
+            <span class="fragment fade-in" data-fragment-index="1">
+              I <img width="45" class="nostyle" src="images/heart.png"/> JavaScript
+            </span>
+            <span class="fragment fade-in" data-fragment-index="2">
+              I <img width="45" class="nostyle" src="images/heart.png"/> TypeScript
+            </span>
+            <span class="fragment fade-in" data-fragment-index="3">
+              I <img width="45" class="nostyle" src="images/broken-heart.png"/> TypeScript
+            </span>
+            <span class="fragment fade-in" data-fragment-index="4">
+              I <img width="45" class="nostyle" src="images/heart.png"/> TypeScript
+            </span>
+          </h2>
           <aside class="notes">
             <li>I joined Ionic 2 years ago.
             <li>I was writing primarily React applications before joining Ionic
@@ -122,10 +145,11 @@
         </section>
 
         <section>
+          <img class="nostyle right-info-img" src="images/ionic.png"/>
           <h2>What is Ionic?</h2>
           <ul>
             <li>Cross platform UI kit</li>
-            <li>AngularJS -> Angular -> <span class="fragment">Stencil</span></li>
+            <li>AngularJS -> Angular<span class="fragment"> -> Stencil</span></li>
             <li>TypeScript</li>
           </ul>
           <aside class="notes">
@@ -144,9 +168,12 @@
         <section>
           <h2>The JS ecosystem is changing</h2>
           <ul>
-            <li>'what is best framework?' is now 'which do you prefer?'</li>
-            <li>Components that will work with any framework <span class="fragment">or no framework</span></li>
-            <li>Write once use everywhere</li>
+            <span class="swapgroup">
+            <li class="fragment fade-in">'What is best framework?'</li>
+            <li class="fragment fade-in">'Which framework do you prefer?'</li>
+            </span>
+            <li class="fragment fade-in">Components that will work with any framework or no framework</li><br/>
+            <li class="fragment fade-in">Write once use everywhere</li>
           </ul>
           <aside class="notes">
             <li>What is the best framework, is no longer the question. The question is which framework do you
@@ -160,6 +187,7 @@
 
         <section>
           <h2>Our Answer was Web Components</h2>
+          <img class="nostyle" src="images/web-component-logo.png"/>
           <aside class="notes">
             <li>It was the right time, Chrome had full support, Firefox promised support, and Safari just released a tech preview
               that included support for Web Components.
@@ -174,7 +202,7 @@
           <ul>
             <li>Realized our work could be valuable to others</li>
             <li>Stencil is a 'compiler' that generates Web Components</li>
-            <li>Developer Experience was our number 2 priority <span class="fragment">behind performance</span></li>
+            <li>Developer Experience  and app performance are our 2 top priorities</li>
           </ul>
           <aside class="notes">
             <li>We didn’t plan on building a new tool, we just wanted to improve Ionic, but after a few months of
@@ -293,6 +321,7 @@
           How does it work
           - We use the metadata collection to gain better insight into your components needs and then set flags that allow us to not include these
             features during build time.
+          - If you are never listening to a host element then the listener logic is never needed in core, does your project include SVGs.
           <aside class="notes">
             <li>Based on features used we may not need to bundle all of stencil’s runtime just those features that are specified by the code.
           </aside>

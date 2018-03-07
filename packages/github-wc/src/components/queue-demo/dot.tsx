@@ -26,7 +26,8 @@ export class QueueDot {
       top: (this.y) + 'px',
       borderRadius: (s / 2) + 'px',
       lineHeight: (s) + 'px',
-      background: this.hover ? '#ff0' : '#61dafb'
+      color: this.hover ? '#B9C0D2' : 'black',
+      background: this.hover ? 'black' : '#B9C0D2'
     };
 
     return {
