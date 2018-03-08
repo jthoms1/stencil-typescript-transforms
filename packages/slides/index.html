@@ -40,8 +40,11 @@
         font-family: 'Poppins', sans-serif;
         color: #B9C0D2;
       }
+      div.reveal b {
+        font-weight: bold;
+        color: #FFF;
+      }
       .right-info-img {
-        width: 100px;
         position: absolute;
         right: 0;
         top: 0;
@@ -145,19 +148,18 @@
         </section>
 
         <section>
-          <img class="nostyle right-info-img" src="images/ionic.png"/>
+          <img width=100 class="nostyle right-info-img" src="images/ionic.png"/>
           <h2>What is Ionic?</h2>
           <ul>
-            <li>Cross platform UI kit</li>
-            <li>AngularJS -> Angular<span class="fragment"> -> Stencil</span></li>
-            <li>TypeScript</li>
+            <li>Cross platform UI kit</li><br/>
+            <li>v1 AngularJS<br/>v2 Angular</li><br/>
+            <li>TypeScript All the Things <img width=100 class="nostyle" src="images/all-the-things.png"/></li>
           </ul>
           <aside class="notes">
             <li>Framework/Component Library for mobile applications (Vanity metric) and we offer supporting services
               to these application developers.
             <li>Cross platform UI kit.
             <li>Bootstrap for mobile.
-            <li>Software for developers so that they can create amazing web based applications.
             <li>Component library/framework built originally on AngularJS and then Angular /w TypeScript.
             <li>Typescript became the language of Ionic after we adopted it for our v2 release in 2016,
               JavaScript wasn’t written anymore at the company. Our front-end libraries, our node code, our websites,
@@ -169,19 +171,19 @@
           <h2>The JS ecosystem is changing</h2>
           <ul>
             <span class="swapgroup">
-            <li class="fragment fade-in">'What is best framework?'</li>
-            <li class="fragment fade-in">'Which framework do you prefer?'</li>
+            <li class="fragment fade-in">"What is <b>best</b> framework?"</li>
+            <li class="fragment fade-in">"Which framework do you <b>prefer</b>?"</li>
             </span>
-            <li class="fragment fade-in">Components that will work with any framework or no framework</li><br/>
+            <li class="fragment fade-in">Components that will work with <b>any</b> framework or with <b>no</b> framework</li><br/>
             <li class="fragment fade-in">Write once use everywhere</li>
-          </ul>
+          </ul><br/><br/><br/><br/>
           <aside class="notes">
             <li>What is the best framework, is no longer the question. The question is which framework do you
               prefer and we want to provide our components to devs no matter the preferred framework.
             <li>Enable our components to work with any framework (or no framework at all)
             <li>We wanted to have our Ionic codebase written in one format and have it work in any
               website or web application. In other words we want to support many frameworks but have our codebase
-              written in no framework.  Lets be agnostic
+              written in no framework.  Lets be agnostic.
           </aside>
         </section>
 
@@ -189,21 +191,22 @@
           <h2>Our Answer was Web Components</h2>
           <img class="nostyle" src="images/web-component-logo.png"/>
           <aside class="notes">
-            <li>It was the right time, Chrome had full support, Firefox promised support, and Safari just released a tech preview
-              that included support for Web Components.
-            <li>So we found our answer and we started building the new Ionic codebase in web components.
-            <li>What we found was that we wanted more from what the vanilla experience offered us and we wanted to smooth over
-              the edges so we started to spend more time on our own abstractions.
+            <li>It was the right time, Chrome has full support, Firefox is releasing support this week, and Safari has full support
+              Edge/IE 11 can be polyfilled.
+            <li>So we found our answer and we started building the new Ionic codebase in web components. And we have around 100 components
+            <li>What we found was that we wanted more from what the vanilla web component experience, we wanted to smooth over
+              the edges. So we started to spend more time on our own abstractions.
           </aside>
         </section>
 
         <section>
-          <h2>StencilJS Born out of Necessity</h2>
-          <img class="nostyle right-info-img" src="images/stencil-fits-in.png"/>
-          <ul>
-            <li>Realized our work could be valuable to others</li>
-            <li>Stencil is a 'compiler' that generates Web Components</li>
-            <li>Developer Experience  and app performance are our 2 top priorities</li>
+          <h2>StencilJS</h2>
+          <ul style="padding-right: 200px">
+            <li class="fragment">Others could value our abstractions</li><br/>
+            <li class="fragment">Stencil is a 'compiler' that generates Web Components
+              <img style="top: 30px; right: -136px" width=400 class="nostyle right-info-img" src="images/stencil-fits-in.png"/>
+            </li><br/>
+            <li class="fragment">Developer Experience and performance</li>
           </ul>
           <aside class="notes">
             <li>We didn’t plan on building a new tool, we just wanted to improve Ionic, but after a few months of
@@ -215,17 +218,26 @@
         </section>
 
         <section>
+          <br/><br/><br/>
+          <h2>StencilJS</h2>
           <queue-demo></queue-demo>
+          <aside class="notes">
+            <li>Advantage of using revealJS for my slides is that I can embed web components directly in my slides</li>
+            <li>This is a demo we use to show that we components are performant, this is animating the whole
+              tree and updated 729 text nodes every second. Every dot and triangle is a web component and the number
+              being displayed is actually passed down from parent to child from the top.
+            </li>
+          </aside>
         </section>
 
         <section>
           <h2>StencilJS</h2>
-          <img class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
           <ul>
-            <li>Reactive Data-binding</li>
-            <li>Virtual DOM</li>
-            <li>Async rendering queue</li>
-            <li>TypeScript</li>
+            <li>Reactive Data-binding</li><br/>
+            <li>Virtual DOM</li><br/>
+            <li>Async rendering queue</li><br/>
+            <li>TypeScript</li><br/>
             <li>JSX</li>
           </ul>
           <aside class="notes">
@@ -235,12 +247,12 @@
 
         <section>
           <h2>StencilJS</h2>
-          <img class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
           <ul>
-            <li>Have excellent developer ergonomics</li>
-            <li>Be able to be lazy loaded</li>
-            <li>Be able to stand on their own</li>
-            <li>Be type safe</li>
+            <li>Have excellent developer ergonomics</li><br/>
+            <li>Be able to be lazy loaded</li><br/>
+            <li>Be able to stand on their own</li><br/>
+            <li>Be type safe</li><br/>
             <li>Be as tiny as possible</li>
           </ul>
           <aside class="notes">
@@ -255,10 +267,8 @@
           </aside>
         </section>
 
-        <!------------------------------------------------------------------------------------>
-
         <section>
-          <h2>What does a component look like</h2>
+          <h2>Stencil Component</h2>
 
           Show picture of code.
           <aside class="notes">
@@ -268,25 +278,40 @@
             <li>Watch Decorator => Method provided to execute with new, old value on change
             <li>State Decorator => Reactive (Vuejs)
             <li>render Method => JSX (React/Preact)
+              Other decorators but this covering these for brevity
           </aside>
         </section>
 
         <section>
-          <h2>Keeping code small and portable we needed to compile down to web components.</h2>
-          <h2>TypeScript powers the Stencil Compiler</h2>
+          <h2>Stencil Compiler</h2>
+          <ul>
+            <li>Keeping code small and portable we needed to compile down to web components.</li><br/>
+            <li class="fragment">TypeScript powers the Stencil Compiler</li>
+          </ul>
           <aside class="notes">
             <li>We realized that in order to accomplish what we wanted we needed more than just
               language support, we also need our own compiler.
             <li>We were already using Typescript so the choice was obvious to build our own compiler
-              using the provided Compiler API.
+              using the provided Compiler API. - Which turns out was a great coincidence
           </aside>
         </section>
 
         <section>
-          <h2>Diving into the undocumented APIs of TypeScript</h2>
+          <h2>Diving into the TypeScript Compiler APIs</h2>
           <img src="images/dive-fail.gif"/>
+          <aside class="notes">
+            <li>This is not a reflection on the APIs themselves just me trying to use them</li>
+          </aside>
         </section>
 
+        <!------------------------------------------------------------------------------------>
+
+        <section>
+          <h2>Metadata Collection</h2>
+          Collecting metadata with typescript
+          https://github.com/ionic-team/stencil/blob/master/src/compiler/transpile/transpile.ts#L60
+          https://github.com/ionic-team/stencil/blob/master/src/compiler/transpile/datacollection/index.ts
+        </section>
 
         <section>
           <h2>Metadata Collection</h2>
@@ -294,11 +319,21 @@
           - There is alot of valuable information defined by developers while building the components
             that can provide us with valuable information while transforming and generating the resulting code.
           - Examples would be tagName, all style data, what are possible properties, well mostly all decorators.
+          - Also test for valid data, we depend on types but sometimes you need more validation
+          - Prop Decorator is a bit more interesting. We infer things based on your prop types. This allows us to be more
+            effecient in our runtime code.
           How does it work
           - We walk the tree and collect the information and normalize the data based on some usage rules.
           <aside>
             <li>All the data we collected during the metadata collection lets add that back to the component in a straight forward way
           </aside>
+        </section>
+
+        <section>
+          <h2>AST Transforms are Very Powerful</h2>
+          https://github.com/ionic-team/stencil/blob/master/src/compiler/transpile/transpile.ts#L116
+
+          image of code from stencil showing transforms.
         </section>
 
         <section>
@@ -345,13 +380,10 @@
         </section>
 
         <section>
-          <h2>Hints of information that might be missing.</h2>
-        </section>
-
-        <section>
           <h2>Documentation generation</h2>
           Almost free
           Example of output and how it relates to collection
+          Remember all the metadata we collected, especially around props and their types/docs that is very nice for generating documentation.
           <aside class="notes">
             <li>Similar to the idea of TypeDoc but very specific to components and their own usage
           </aside>
