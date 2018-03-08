@@ -45,6 +45,39 @@ declare global {
 
 
 import {
+  ImgMask as ImgMask
+} from './components/img-mask/img-mask';
+
+declare global {
+  interface HTMLImgMaskElement extends ImgMask, HTMLStencilElement {
+  }
+  var HTMLImgMaskElement: {
+    prototype: HTMLImgMaskElement;
+    new (): HTMLImgMaskElement;
+  };
+  interface HTMLElementTagNameMap {
+    "img-mask": HTMLImgMaskElement;
+  }
+  interface ElementTagNameMap {
+    "img-mask": HTMLImgMaskElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "img-mask": JSXElements.ImgMaskAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface ImgMaskAttributes extends HTMLAttributes {
+      maskHeight?: number;
+      maskTop?: number;
+      src?: string;
+      width?: number;
+    }
+  }
+}
+
+
+import {
   QueueDot as QueueDot
 } from './components/queue-demo/dot';
 

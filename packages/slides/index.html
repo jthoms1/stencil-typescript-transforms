@@ -84,6 +84,10 @@
         box-shadow: none !important;
         margin: 0 !important;
       }
+      img-mask {
+        min-height: 740px;
+        display: block;
+      }
     </style>
 
     <!--[if lt IE 9]>
@@ -204,7 +208,7 @@
           <ul style="padding-right: 200px">
             <li class="fragment">Others could value our abstractions</li><br/>
             <li class="fragment">Stencil is a 'compiler' that generates Web Components
-              <img style="top: 30px; right: -152px" width=400 class="nostyle right-info-img" src="images/stencil-fits-in.png"/>
+              <img style="top: 30px; right: -152px" width=360 class="nostyle right-info-img" src="images/stencil-fits-in.png"/>
             </li><br/>
             <li class="fragment">Developer Experience and performance</li>
           </ul>
@@ -233,7 +237,7 @@
         <section>
           <h2>StencilJS</h2>
           <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
-          <ul style="padding-right: 270px">
+          <ul style="padding-right: 270px; padding-bottom: 150px">
             <li>Reactive Data-binding</li><br/>
             <li>Virtual DOM</li><br/>
             <li>Async rendering queue</li><br/>
@@ -248,7 +252,7 @@
         <section>
           <h2>StencilJS</h2>
           <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
-          <ul>
+          <ul style="padding-bottom: 150px">
             <li>Have excellent developer ergonomics</li><br/>
             <li>Be able to be lazy loaded</li><br/>
             <li>Be able to stand on their own</li><br/>
@@ -268,29 +272,70 @@
         </section>
 
         <section>
-          <h2>Stencil Component</h2>
-
-          Show picture of code.
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <img width=590 class="nostyle blur-filter" src="images/component-code.png"/>
+        </section>
+        <section>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <img-mask
+            src="images/component-code.png"
+            width="590"
+            mask-height="208"
+            mask-top="0"/>
           <aside class="notes">
-            <li>Lets show how good the ergonomics are
             <li>Component Decorator - similar to Angular information about the component its styles show type def
+          </aside>
+        </section>
+        <section>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <img-mask
+            src="images/component-code.png"
+            width="590"
+            mask-height="50"
+            mask-top="233"/>
+          <aside class="notes">
             <li>Prop Decorator => Define what attributes/properties can be passed to this component... with Types.
-            <li>Watch Decorator => Method provided to execute with new, old value on change
             <li>State Decorator => Reactive (Vuejs)
+          </aside>
+        </section>
+        <section>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <img-mask
+            src="images/component-code.png"
+            width="590"
+            mask-height="200"
+            mask-top="290"/>
+          <aside class="notes">
+            <li>Watch Decorator => Method provided to execute with new, old value on change
+            <li>componentWillLoad is one of the many lifecycle methods. This one is called right after
+              it hits the dom
+            </li>
+          </aside>
+        </section>
+        <section>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <img-mask
+            src="images/component-code.png"
+            width="590"
+            mask-height="205"
+            mask-top="495"/>
+          <aside class="notes">
             <li>render Method => JSX (React/Preact)
               Other decorators but this covering these for brevity
           </aside>
         </section>
 
         <section>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
           <h2>Stencil Compiler</h2>
-          <ul>
-            <li>Keeping code small and portable we needed to compile down to web components.</li><br/>
+          <ul style="padding-bottom: 350px">
+            <li>Keep code as small as possible</li><br/>
+            <li class="fragment">We realized that we needed to compile</li><br/>
             <li class="fragment">TypeScript powers the Stencil Compiler</li>
           </ul>
           <aside class="notes">
-            <li>We realized that in order to accomplish what we wanted we needed more than just
-              language support, we also need our own compiler.
+            <li>We realized that in order to accomplish what we wanted we<br/>
+              needed more than just language support, we also need our own compiler.
             <li>We were already using Typescript so the choice was obvious to build our own compiler
               using the provided Compiler API. - Which turns out was a great coincidence
           </aside>
