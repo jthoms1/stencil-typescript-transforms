@@ -1,12 +1,12 @@
 {
-  "name": "github-web-components",
+  "name": "stencil-demo-components",
   "private": false,
   "version": "0.0.1",
   "description": "Stencil App Starter",
   "files": [
     "dist/"
   ],
-  "main": "dist/github-web-components.js",
+  "main": "dist/stencil-demo-components.js",
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "scripts": {
