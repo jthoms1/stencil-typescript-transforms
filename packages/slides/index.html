@@ -72,6 +72,9 @@
         box-shadow: none;
         margin: 0;
       }
+      .reveal section img.rounded {
+        border-radius: 8px;
+      }
       .example-num {
         position: absolute;
         top: -20px;
@@ -118,23 +121,30 @@
           <p>
             <github-intro userid="jthoms1"></github-intro>
           </p>
+          <aside class="notes">
+            <li>Hi I am Josh Thomas, You can find me on github/twitter or any other social thing as jthoms1.
+            <li>Today I will be talking about how we built StencilJS with TypeScript
+          </aside>
         </section>
 
         <section>
           <h2>About Me</h2>
           <ul>
-            <li class="fragment">Senior Developer at Ionic</li><br/>
+            <li>Senior Developer at Ionic</li><br/>
             <li class="fragment">One of the creators of StencilJS</li>
           </ul>
           <aside class="notes">
             <li>Senior Developer at Ionic
             <li>One of the creators of StencilJS
-            <li>Today I will be talking about how we built StencilJS on TypeScript
           </aside>
         </section>
 
         <section data-transition="zoom">
           <img src="images/kids.jpg" />
+          <aside class="notes">
+            <li>I also have 2 daughters at home.
+            <li>And Yes, my house is usually as crazy as this filter makes it seem
+          </aside>
         </section>
 
         <section>
@@ -144,9 +154,10 @@
             </span>
           </h2>
           <aside class="notes">
+            <li>I love writing JavaScript.
             <li>I joined Ionic 2 years ago.
             <li>I was writing primarily React applications before joining Ionic
-            <li>My preferred experience was using Babel for my JSX compilation and esnext features, and eslint to keep some code consistency.
+            <li>My preferred experience was Babel and a well tuned Eslint config.
           </aside>
         </section>
         <section>
@@ -156,10 +167,9 @@
             </span>
           </h2>
           <aside class="notes">
-            <li>6 months after started I was tasked with rewriting our Node CLI. Of course it was going to be written in Typescript.
+            <li>6 months after started I was tasked with rewriting our Node CLI in Typescript.
             <li>It took about 2 weeks of constantly fighting with the compiler before I started to feel comfortable and
-              started embracing it’s type system. I would still consider myself new to Typescript but I have been
-              writing it solely for the last 1 ½ years and I would now consider myself an evangelist.
+              started embracing it’s type system.
           </aside>
         </section>
         <section>
@@ -169,8 +179,15 @@
             </span>
           </h2>
           <aside class="notes">
-            <li>I would still consider myself new to Typescript but I have been
-              writing it solely for the last 1 ½ years and I would now consider myself an evangelist.</li>
+            <li>I still consider myself new to Typescript even after writing it for 1 1/2 years.
+            <li>I love TypeScript more that JavaScript</li>
+          </aside>
+        </section>
+
+        <section>
+          <img class="nostyle rounded" src="images/twitter-ts-love.png"/>
+          <aside class="notes">
+            <li>I would now consider myself an evangelist.</li>
           </aside>
         </section>
 
@@ -178,19 +195,23 @@
           <img width=100 class="nostyle right-info-img" src="images/ionic.png"/>
           <h2>What is Ionic?</h2>
           <ul>
-            <li class="fragment">Cross platform UI kit</li><br/>
+            <li class="fragment">Cross platform Web UI kit</li><br/>
             <li class="fragment">v1 AngularJS / v2 Angular</li><br/>
             <li class="fragment">TypeScript All the Things <img width=75 style="margin-bottom: -10px" class="nostyle" src="images/all-the-things.png"/></li>
           </ul>
           <aside class="notes">
-            <li>Framework/Component Library for mobile applications (Vanity metric) and we offer supporting services
+            <li>Cross platform Web UI kit.
+            <li>Framework/Component Library for mobile applications and we offer supporting services
               to these application developers.
-            <li>Cross platform UI kit.
             <li>Bootstrap for mobile.
-            <li>Component library/framework built originally on AngularJS and then Angular /w TypeScript.
-            <li>Typescript became the language of Ionic after we adopted it for our v2 release in 2016,
-              JavaScript wasn’t written anymore at the company. Our front-end libraries, our node code, our websites,
-              our webapps, etc all in TypeScript.
+            <li>Time for a vanity metric. We are the number 3 starred Github project based on Typescript, behind VS Code and Angular with around 33k stars</li>
+
+            <li>Component library/framework built originally on AngularJS and then Angular /w TypeScript. We actually opted at the time to not support JavaScript
+              with Angular and only support TypeScript.  Which was a good thing.
+
+            <li>After this Typescript became the language of Ionic,
+              JavaScript wasn’t written anymore at the company. Our front-end libraries, our Node code, our websites,
+              our Webapps all in TypeScript.
           </aside>
         </section>
 
@@ -199,6 +220,9 @@
           <ul style="padding-bottom: 245px; padding-right: 433px;">
             <li class="fragment fade-in">"What is <b>best</b> framework?"</li>
           </ul>
+          <aside class="notes">
+            <li>We have noticed that over the last few years that the JS ecosystem has changed</li>
+          </aside>
         </section>
 
         <section>
@@ -209,12 +233,10 @@
             <li class="fragment fade-in">Write once use everywhere</li>
           </ul><br/>
           <aside class="notes">
-            <li>What is the best framework, is no longer the question. The question is which framework do you
-              prefer and we want to provide our components to devs no matter the preferred framework.
-            <li>Enable our components to work with any framework (or no framework at all)
-            <li>We wanted to have our Ionic codebase written in one format and have it work in any
-              website or web application. In other words we want to support many frameworks but have our codebase
-              written in no framework.  Lets be agnostic.
+            <li>What is the best framework, is no longer the question. The question is which framework do you prefer.
+            <li>Whatever your setup/framework we want our components to work there. Any framework (or no framework at all)
+            <li>In order to accomplish this we need to be agnostic. We wanted to have our Ionic codebase written in one format and have it work in any
+              website or web application.
           </aside>
         </section>
 
