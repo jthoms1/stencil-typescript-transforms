@@ -15,7 +15,7 @@
 
     <!-- Code syntax highlighting -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
-    <script src="./node_modules/github-web-components/dist/github-web-components.js"></script>
+    <script src="./node_modules/stencil-demo-components/dist/stencil-demo-components.js"></script>
 
     <!-- Printing and PDF exports -->
     <script>
@@ -46,6 +46,12 @@
       div.reveal b {
         font-weight: bold;
         color: #FFF;
+      }
+      img.emoji {
+        width: 45px;
+      }
+      h2 img.emoji {
+        width: 52px;
       }
       .right-info-img {
         position: absolute;
@@ -91,6 +97,9 @@
         min-height: 740px;
         display: block;
       }
+      .reveal ul.links a {
+        font-size: 0.7em;
+      }
     </style>
 
     <!--[if lt IE 9]>
@@ -128,19 +137,16 @@
           <img src="images/kids.jpg" />
         </section>
 
-        <section class="swapgroup">
+        <section>
           <h2>
             <span class="fragment fade-in" data-fragment-index="1">
-              I <img width="45" class="nostyle" src="images/heart.png"/> JavaScript
-            </span>
-            <span class="fragment fade-in" data-fragment-index="2">
-              I <img width="45" class="nostyle" src="images/heart.png"/> TypeScript
+              I <img class="nostyle emoji" src="images/heart.png"/> JavaScript
             </span>
             <span class="fragment fade-in" data-fragment-index="3">
-              I <img width="45" class="nostyle" src="images/broken-heart.png"/> TypeScript
+              I <img class="nostyle emoji" src="images/broken-heart.png"/> TypeScript
             </span>
             <span class="fragment fade-in" data-fragment-index="4">
-              I <img width="45" class="nostyle" src="images/heart.png"/> TypeScript
+              I <img class="nostyle emoji" src="images/heart.png"/> TypeScript
             </span>
           </h2>
           <aside class="notes">
@@ -244,11 +250,11 @@
         <section>
           <h2>StencilJS</h2>
           <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
-          <ul style="padding-right: 270px; padding-bottom: 150px">
-            <li>Reactive Data-binding</li><br/>
-            <li>Virtual DOM</li><br/>
-            <li>Async rendering queue</li><br/>
+          <ul style="width: 720px; min-height: 600px;">
             <li>TypeScript</li><br/>
+            <li>Reactive Data-binding</li><br/>
+            <li>Async rendering queue</li><br/>
+            <li>Virtual DOM</li><br/>
             <li>JSX</li>
           </ul>
           <aside class="notes">
@@ -259,7 +265,7 @@
         <section>
           <h2>StencilJS</h2>
           <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
-          <ul style="padding-bottom: 150px">
+          <ul style="width: 720px; min-height: 600px">
             <li>Have excellent developer ergonomics</li><br/>
             <li>Be able to be lazy loaded</li><br/>
             <li>Be able to stand on their own</li><br/>
@@ -335,7 +341,7 @@
         <section>
           <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
           <h2>Stencil Compiler</h2>
-          <ul style="padding-bottom: 350px">
+          <ul style="width: 720px; min-height: 600px">
             <li class="fragment">We realized that we needed to compile</li><br/>
             <li class="fragment">TypeScript powers the Stencil Compiler</li>
           </ul>
@@ -348,21 +354,15 @@
         </section>
 
         <section>
-          <h2>Diving into the TypeScript Compiler APIs</h2>
-          <img src="images/dive-fail.gif"/>
-          <aside class="notes">
-            <li>This is not a reflection on the APIs themselves just me trying to use them</li>
-          </aside>
+          <h2>How the sausage gets made <img class="nostyle emoji" src="images/hot-dog.png"</h2>
         </section>
-
-        <!------------------------------------------------------------------------------------>
 
         <section>
           <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
           <h2>Metadata Collection</h2>
-          <ul>
-
-          </ul>
+          <img class="nostyle" src="images/meta-component-code.png"/><br/>
+          <img class="nostyle fragment" src="images/meta-component-details.png"/>
+          <aside class="notes">
           Why would you do this
           - There is alot of valuable information defined by developers while building the components
             that can provide us with valuable information while transforming and generating the resulting code.
@@ -372,33 +372,26 @@
             effecient in our runtime code.
           How does it work
           - We walk the tree and collect the information and normalize the data based on some usage rules.
-          <aside>
             <li>All the data we collected during the metadata collection lets add that back to the component in a straight forward way
           </aside>
         </section>
 
         <section>
           <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
-          <h2>Metadata Collection</h2>
-          <img class="nostyle" src="images/meta-component-code.png"/><br/>
-          <img class="nostyle fragment" src="images/meta-component-details.png"/>
-        </section>
-
-        <section>
-          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
-          <h2>Power of AST Transforms</h2>
-          <img class="nostyle" src="images/transform-components.png"/>
+          <h2>Power of Transforms</h2>
+          <img style="padding-bottom: 100px;" class="nostyle" src="images/transform-components.png"/>
           <aside class="notes">
           </aside>
         </section>
 
         <section>
-          <h2>Power of AST Transforms</h2>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <h2>Power of Transforms</h2>
           <img-mask
             src="images/transform-components.png"
             width="910"
-            mask-height="50"
-            mask-top="0"/>
+            mask-height="40"
+            mask-top="180"></img-mask>
           <aside class="notes">
             <li>Polyfills add extra code</li>
             <li>removes all decorators that are specific to stencil
@@ -407,7 +400,14 @@
         </section>
 
         <section>
-          <h2>buildConditionalTransform</h2>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <h2>Power of Transforms</h2>
+          <img-mask
+            src="images/transform-components.png"
+            width="910"
+            mask-height="20"
+            mask-top="220"></img-mask>
+          <aside class="notes">
           Why would you do this
           - If all components in your project do not use specific features then really non of your runtime needs code around those features
             this allows us to reduce the amount of common code that needs to be shipped to a browser.
@@ -415,33 +415,49 @@
           - We use the metadata collection to gain better insight into your components needs and then set flags that allow us to not include these
             features during build time.
           - If you are never listening to a host element then the listener logic is never needed in core, does your project include SVGs.
-          <aside class="notes">
             <li>Based on features used we may not need to bundle all of stencil’s runtime just those features that are specified by the code.
           </aside>
         </section>
 
         <section>
-          <h2>Upgrades</h2>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <h2>Power of Transforms</h2>
+          <img-mask
+            src="images/transform-components.png"
+            width="910"
+            mask-height="115"
+            mask-top="255"></img-mask>
+          <aside class="notes">
+            Purge anything left that we do not need
+          </aside>
+        </section>
+
+        <section>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <h2>Seamless Upgrades</h2>
           <ul>
 
           </ul>
-          Explain how we can upgrade
-          - Most of our code that compiles down to what we call a standardized target component.  It is normalized across projects and
-            potentially across versions of Stencil.
-          - If we deprecate a specific feature we allow it to continue to work, provide info that it will be deprecated during compile time
-            and then after an upgrade the devs app still works.
-          - We also have the ability remove deprecated features from runtime
-          Example of text we show when upgrading
           <aside class="notes">
+            Explain how we can upgrade
+            - Most of our code that compiles down to what we call a standardized target
+              component.  It is normalized across projects and
+              potentially across versions of Stencil.
+            - If we deprecate a specific feature we allow it to continue to work, provide info that it will be
+              deprecated during compile time
+              and then after an upgrade the devs app still works.
+            - We also have the ability remove deprecated features from runtime
+            Example of text we show when upgrading
             <li>Read files generated by stencil and decide how they need to change and then also let the dev know that we did this for them.
             <li>ontrol the output of our compiled code and versioned to our compiler means we know exactly how the api changed and then the codemods that need to occur to ensure it works with newer runtime code.
           </aside>
         </section>
 
         <section>
-          <h2>Documentation generation</h2>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <h2>Docs generation</h2>
           <ul>
-            <li>Almost free</li>
+            <li>Almost free</li><br/>
             <li>Metadata + JSDoc comments becomes docs</li>
           </ul>
           <aside class="notes">
@@ -452,19 +468,19 @@
         </section>
 
         <section>
-          <h2>We'll do it live.</h2>
-          <ul>
-            <li>demo time</li>
-          </ul>
+          <h2>We'll do it live. <img class="emoji nostyle" src="images/video-camera.png"/></h2>
           <aside class="notes">
             <li>We want the ability to have lazy loaded components and get full type support.  Globals here we come.
-            <li>Type Safety
-            <li>document.createElement + JSX (Preact, React, Vanilla TS)
+            <li>document.createElement + JSX
           </aside>
         </section>
 
         <section>
           <h2>Next Steps</h2>
+          <ul>
+            <li class="fragment">More documentation</li><br/>
+            <li class="fragment">Framework Integration Tests</li>
+          </ul>
           <aside class="notes">
             <li>More documentation on our road to 1.0
             <li>Unit tests to ensure that we have full coverage and support for many frameworks
@@ -472,11 +488,17 @@
         </section>
 
         <section>
-          <h2>Thank You</h2>
-          <ul>
-            <li>https://stenciljs.com/</li>
-            <li>https://github.com/jthoms1/stencil-typescript-transforms</li>
-            <li>https://github.com/Microsoft/TypeScript/wiki/Using-the-Compiler-API</li>
+          <h2>Thank You! <img class="emoji nostyle" src="images/thanks.png"/></h2>
+          <ul class="links">
+            <li>
+              <a href="https://stenciljs.com/">https://stenciljs.com/</a>
+            </li>
+            <li>
+              <a href="https://github.com/jthoms1/stencil-typescript-transforms">https://github.com/jthoms1/stencil-typescript-transforms</a>
+            </li>
+            <li>
+              <a href="https://github.com/Microsoft/TypeScript/wiki/Using-the-Compiler-API">https://github.com/Microsoft/TypeScript/wiki/Using-the-Compiler-API</a>
+            </li>
           </ul>
         </section>
 
