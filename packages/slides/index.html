@@ -336,7 +336,6 @@
           <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
           <h2>Stencil Compiler</h2>
           <ul style="padding-bottom: 350px">
-            <li>Keep code as small as possible</li><br/>
             <li class="fragment">We realized that we needed to compile</li><br/>
             <li class="fragment">TypeScript powers the Stencil Compiler</li>
           </ul>
@@ -359,13 +358,7 @@
         <!------------------------------------------------------------------------------------>
 
         <section>
-          <h2>Metadata Collection</h2>
-          Collecting metadata with typescript
-          https://github.com/ionic-team/stencil/blob/master/src/compiler/transpile/transpile.ts#L60
-          https://github.com/ionic-team/stencil/blob/master/src/compiler/transpile/datacollection/index.ts
-        </section>
-
-        <section>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
           <h2>Metadata Collection</h2>
           <ul>
 
@@ -385,34 +378,36 @@
         </section>
 
         <section>
-          <h2>AST Transforms are Very Powerful</h2>
-          https://github.com/ionic-team/stencil/blob/master/src/compiler/transpile/transpile.ts#L116
-
-          image of code from stencil showing transforms.
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <h2>Metadata Collection</h2>
+          <img class="nostyle" src="images/meta-component-code.png"/><br/>
+          <img class="nostyle fragment" src="images/meta-component-details.png"/>
         </section>
 
         <section>
-          <h2>Purge</h2>
-          <ul>
-
-          </ul>
-          Why would you do this
-          - Polyfills add extra code.
-          How does it work
-          - AST transforms to remove decorators
-          How does it affect the example
-          - show results.
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <h2>Power of AST Transforms</h2>
+          <img class="nostyle" src="images/transform-components.png"/>
           <aside class="notes">
+          </aside>
+        </section>
+
+        <section>
+          <h2>Power of AST Transforms</h2>
+          <img-mask
+            src="images/transform-components.png"
+            width="910"
+            mask-height="50"
+            mask-top="0"/>
+          <aside class="notes">
+            <li>Polyfills add extra code</li>
             <li>removes all decorators that are specific to stencil
             <li>Typescript decorators have some ugly extra code that we don’t need
           </aside>
         </section>
 
         <section>
-          <h2>Conditional Transforms</h2>
-          <ul>
-
-          </ul>
+          <h2>buildConditionalTransform</h2>
           Why would you do this
           - If all components in your project do not use specific features then really non of your runtime needs code around those features
             this allows us to reduce the amount of common code that needs to be shipped to a browser.
@@ -478,6 +473,11 @@
 
         <section>
           <h2>Thank You</h2>
+          <ul>
+            <li>https://stenciljs.com/</li>
+            <li>https://github.com/jthoms1/stencil-typescript-transforms</li>
+            <li>https://github.com/Microsoft/TypeScript/wiki/Using-the-Compiler-API</li>
+          </ul>
         </section>
 
       </div>
