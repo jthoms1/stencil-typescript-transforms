@@ -2,23 +2,23 @@
   "namespace": "StencilDemoComponents",
   "fsNamespace": "stencil-demo-components",
   "loader": "../stencil-demo-components.js",
-  "core": "stencil-demo-components.core.js",
-  "corePolyfilled": "es5-build-disabled.js",
+  "core": "stencil-demo-components.vwlcpfe5.js",
+  "corePolyfilled": "stencil-demo-components.96yjbqvh.js",
   "components": {
     "github-intro": {
-      "$": "github-intro"
+      "$": "qqb3xarq"
     },
     "img-mask": {
-      "$": "img-mask"
+      "$": "eznzprhf"
     },
     "queue-demo": {
-      "$": "queue-demo"
+      "$": "yv8qchyc"
     },
     "queue-dot": {
-      "$": "queue-demo"
+      "$": "yv8qchyc"
     },
     "queue-triangle": {
-      "$": "queue-demo"
+      "$": "yv8qchyc"
     }
   }
 }
