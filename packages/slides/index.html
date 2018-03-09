@@ -367,6 +367,9 @@
 
         <section>
           <h2>Metadata Collection</h2>
+          <ul>
+
+          </ul>
           Why would you do this
           - There is alot of valuable information defined by developers while building the components
             that can provide us with valuable information while transforming and generating the resulting code.
@@ -390,6 +393,9 @@
 
         <section>
           <h2>Purge</h2>
+          <ul>
+
+          </ul>
           Why would you do this
           - Polyfills add extra code.
           How does it work
@@ -404,6 +410,9 @@
 
         <section>
           <h2>Conditional Transforms</h2>
+          <ul>
+
+          </ul>
           Why would you do this
           - If all components in your project do not use specific features then really non of your runtime needs code around those features
             this allows us to reduce the amount of common code that needs to be shipped to a browser.
@@ -418,6 +427,9 @@
 
         <section>
           <h2>Upgrades</h2>
+          <ul>
+
+          </ul>
           Explain how we can upgrade
           - Most of our code that compiles down to what we call a standardized target component.  It is normalized across projects and
             potentially across versions of Stencil.
@@ -433,19 +445,21 @@
 
         <section>
           <h2>Documentation generation</h2>
-          Almost free
-          Example of output and how it relates to collection
-          Remember all the metadata we collected, especially around props and their types/docs that is very nice for generating documentation.
+          <ul>
+            <li>Almost free</li>
+            <li>Metadata + JSDoc comments becomes docs</li>
+          </ul>
           <aside class="notes">
+            <li>Remember all the metadata we collected, especially around props and their
+              types/docs that is very nice for generating documentation.
             <li>Similar to the idea of TypeDoc but very specific to components and their own usage
           </aside>
         </section>
 
         <section>
-          <h2>How does it integrate</h2>
+          <h2>We'll do it live.</h2>
           <ul>
-            <li>Component Types</li>
-            <li>Integrations example</li>
+            <li>demo time</li>
           </ul>
           <aside class="notes">
             <li>We want the ability to have lazy loaded components and get full type support.  Globals here we come.
@@ -457,7 +471,7 @@
         <section>
           <h2>Next Steps</h2>
           <aside class="notes">
-            <li>More documentation and iteration on our road to 1.0
+            <li>More documentation on our road to 1.0
             <li>Unit tests to ensure that we have full coverage and support for many frameworks
           </aside>
         </section>
