@@ -32,6 +32,9 @@
       :root {
         --stencil-grape: rgb(88, 81, 255);
       }
+      .reveal h2 {
+        margin-bottom: 40px;
+      }
       body {
         background: url(images/background.jpg);
         background-size: cover;
@@ -111,8 +114,8 @@
         <section>
           <h2>About Me</h2>
           <ul>
-            <li>Senior Developer at Ionic</li>
-            <li>One of the creators of StencilJS</li>
+            <li class="fragment">Senior Developer at Ionic</li><br/>
+            <li class="fragment">One of the creators of StencilJS</li>
           </ul>
           <aside class="notes">
             <li>Senior Developer at Ionic
@@ -156,7 +159,7 @@
           <h2>What is Ionic?</h2>
           <ul>
             <li class="fragment">Cross platform UI kit</li><br/>
-            <li class="fragment">v1 AngularJS<br/>v2 Angular</li><br/>
+            <li class="fragment">v1 AngularJS / v2 Angular</li><br/>
             <li class="fragment">TypeScript All the Things <img width=75 style="margin-bottom: -10px" class="nostyle" src="images/all-the-things.png"/></li>
           </ul>
           <aside class="notes">
@@ -173,14 +176,18 @@
 
         <section>
           <h2>The JS ecosystem is changing</h2>
-          <ul>
-            <span class="swapgroup">
+          <ul style="padding-bottom: 245px; padding-right: 433px;">
             <li class="fragment fade-in">"What is <b>best</b> framework?"</li>
-            <li class="fragment fade-in">"Which framework do you <b>prefer</b>?"</li>
-            </span>
+          </ul>
+        </section>
+
+        <section>
+          <h2>The JS ecosystem is changing</h2>
+          <ul>
+            <li>"Which framework do you <b>prefer</b>?"</li><br/>
             <li class="fragment fade-in">Components that will work with <b>any</b> framework or with <b>no</b> framework</li><br/>
             <li class="fragment fade-in">Write once use everywhere</li>
-          </ul><br/><br/><br/><br/>
+          </ul><br/>
           <aside class="notes">
             <li>What is the best framework, is no longer the question. The question is which framework do you
               prefer and we want to provide our components to devs no matter the preferred framework.
