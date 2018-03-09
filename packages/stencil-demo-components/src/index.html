@@ -15,10 +15,28 @@
   <link rel="apple-touch-icon" href="/assets/icon/icon.png">
   <link rel="icon" type="image/x-icon" href="/assets/icon/favicon.ico">
   <link rel="manifest" href="/manifest.json">
+  <style>
+    body.demo {
+      padding: 100px;
+    }
+   .centered {
+     display: block;
+     width: 500px;
+     text-align: center;
+     margin: 0 auto;
+   }
+   .centered small {
+     font-size: 18pt;
+     display: block;
+     margin: 20px 0;
+   }
+  </style>
 </head>
-<body>
+<body class="demo">
 
-  <github-intro userid="jthoms1"></github-intro>
+  <p class="centered">
+    <github-intro userid="jthoms1"></github-intro>
+  </p>
   <queue-demo></queue-demo>
 
   <style>

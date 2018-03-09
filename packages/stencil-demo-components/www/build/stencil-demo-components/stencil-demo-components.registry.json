@@ -3,7 +3,7 @@
   "fsNamespace": "stencil-demo-components",
   "loader": "../stencil-demo-components.js",
   "core": "stencil-demo-components.core.js",
-  "corePolyfilled": "stencil-demo-components.core.pf.js",
+  "corePolyfilled": "es5-build-disabled.js",
   "components": {
     "github-intro": {
       "$": "github-intro"
