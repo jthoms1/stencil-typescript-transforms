@@ -1,0 +1,24 @@
+{
+  "namespace": "StencilDemoComponents",
+  "fsNamespace": "stencil-demo-components",
+  "loader": "../stencil-demo-components.js",
+  "core": "stencil-demo-components.core.js",
+  "corePolyfilled": "es5-build-disabled.js",
+  "components": {
+    "github-intro": {
+      "$": "github-intro"
+    },
+    "img-mask": {
+      "$": "img-mask"
+    },
+    "queue-demo": {
+      "$": "queue-demo"
+    },
+    "queue-dot": {
+      "$": "queue-demo"
+    },
+    "queue-triangle": {
+      "$": "queue-demo"
+    }
+  }
+}
