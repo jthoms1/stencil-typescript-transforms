@@ -326,75 +326,20 @@
           <ul style="width: 720px; min-height: 600px">
             <li>Have excellent developer ergonomics</li><br/>
             <li class="fragment">Be able to be lazy loaded</li><br/>
-            <li class="fragment">Be able to stand on their own</li><br/>
             <li class="fragment">Be type safe</li><br/>
-            <li class="fragment">Be as tiny as possible</li>
+            <li class="fragment">Be as tiny as possible</li><br/>
+            <li class="fragment">Be future proof</li>
           </ul>
           <aside class="notes">
             <li>Provide excellent developer experience/ergonomics.
-            <li>Be standalone, the code should have no references direct dependencies on the Stencil compiler.
-            <li>Be type safe.
-            <li>export types so that if a dev wants to use a component with any framework + typescript it
+            <li>Be lazy loaded is core of the architecture. When a component first hits the DOM we need to either wire it immediatly
+              or download the cooresponding class code and then wire it up.
+            <li>Be type safe - export types so that if a dev wants to use a component with any framework + typescript it
               should also allow type safety.
             <li>Be as tiny as possible with as few polyfills as possible.
             <li>Components should be able to work with future versions of the stencil compiler with as few
-              breaking changes as possible. Upgrades
-          </aside>
-        </section>
-
-<!-- ----------------------------------------------------------------------------------------------------- -->
-
-        <section>
-          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
-          <img width=590 class="nostyle blur-filter" src="images/component-code.png"/>
-        </section>
-        <section>
-          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
-          <img-mask
-            src="images/component-code.png"
-            width="590"
-            mask-height="208"
-            mask-top="0"/>
-          <aside class="notes">
-            <li>Component Decorator - similar to Angular information about the component its styles show type def
-          </aside>
-        </section>
-        <section>
-          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
-          <img-mask
-            src="images/component-code.png"
-            width="590"
-            mask-height="50"
-            mask-top="233"/>
-          <aside class="notes">
-            <li>Prop Decorator => Define what attributes/properties can be passed to this component... with Types.
-            <li>State Decorator => Reactive (Vuejs)
-          </aside>
-        </section>
-        <section>
-          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
-          <img-mask
-            src="images/component-code.png"
-            width="590"
-            mask-height="200"
-            mask-top="290"/>
-          <aside class="notes">
-            <li>Watch Decorator => Method provided to execute with new, old value on change
-            <li>componentWillLoad is one of the many lifecycle methods. This one is called right after
-              it hits the dom
-            </li>
-          </aside>
-        </section>
-        <section>
-          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
-          <img-mask
-            src="images/component-code.png"
-            width="590"
-            mask-height="205"
-            mask-top="495"/>
-          <aside class="notes">
-            <li>render Method => JSX (React/Preact)
-              Other decorators but this covering these for brevity
+              breaking changes as possible. We wanted the ability to run components written with older version of Stencil
+              to be able to be included in projects with new versions of Stencil.
           </aside>
         </section>
 
@@ -402,16 +347,89 @@
           <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
           <h2>Stencil Compiler</h2>
           <ul style="width: 720px; min-height: 600px">
-            <li class="fragment">We realized that we needed to compile</li><br/>
+            <li class="fragment">Our laundry list of requirements meant we needed to write a compiler</li><br/>
             <li class="fragment">TypeScript powers the Stencil Compiler</li>
           </ul>
           <aside class="notes">
             <li>We realized that in order to accomplish what we wanted we<br/>
-              needed more than just language support, we also need our own compiler.
+              needed more than just language/runtime support, we also need our own compiler.
             <li>We were already using Typescript so the choice was obvious to build our own compiler
               using the provided Compiler API. - Which turns out was a great coincidence
           </aside>
         </section>
+
+        <section>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <h2>Component API</h2>
+          <img width=590 class="nostyle blur-filter" src="images/component-code.png"/>
+          <aside class="notes">
+            <li>This is a pretty typical Stencil component</li>
+            <li>You can see right now that we make heavy use of decorators</li>
+            <li>Each component is written as a vanilla TS class</li>
+            <li>This component does not contain every decorator or method you might see
+              but I wanted to show this so that you can better visualize how it works.</li>
+            <li>Yes decorators are Stage 2 and experimental but it really doesn't matter to much
+              but more on that later</li>
+          </aside>
+        </section>
+
+        <section>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <h2>Component API</h2>
+          <img-mask
+            src="images/component-code.png"
+            width="590"
+            mask-height="208"
+            mask-top="0"/>
+          <aside class="notes">
+            <li>Component - Class decorator that accepts general metadata or information about the component
+          </aside>
+        </section>
+
+        <section>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <h2>Component API</h2>
+          <img-mask
+            src="images/component-code.png"
+            width="590"
+            mask-height="50"
+            mask-top="233"/>
+          <aside class="notes">
+            <li>Prop - Property Decorator - designates component attributes/properties that can be passed to this component... with Types.
+              If the prop passed to the component changes then the component rerenders and updates the visual representation of the component
+            <li>State - Property Decorator - designates which class property is part of the components state.
+              The component reacts to changes in state and forces a rerender.
+          </aside>
+        </section>
+
+        <section>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <h2>Component API</h2>
+          <img-mask
+            src="images/component-code.png"
+            width="590"
+            mask-height="200"
+            mask-top="290"/>
+          <aside class="notes">
+            <li>Watch - Method Decorator - designates a function to be called when the given state/prop name changes.
+            <li>componentWillLoad is one of the many lifecycle methods. This one is called right before the component has loaded
+          </aside>
+        </section>
+
+        <section>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <h2>Component API</h2>
+          <img-mask
+            src="images/component-code.png"
+            width="590"
+            mask-height="205"
+            mask-top="495"/>
+          <aside class="notes">
+            <li>render Method - returns a JSX representation of what should appear on the page. This method was reduced for brevity
+              JSX can seem foreign but it is super expressive and supported by TypeScript out of the box.
+          </aside>
+        </section>
+
 
         <section>
           <h2>How the sausage gets made <img class="nostyle emoji" src="images/hot-dog.png"</h2>
