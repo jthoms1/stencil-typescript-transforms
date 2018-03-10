@@ -91,11 +91,11 @@ self.__precacheManifest = [
   },
   {
     "url": "host.config.json",
-    "revision": "0bb6c5e2526f7710624d2785802819d0"
+    "revision": "fbcd14f9e4825358cddef5539219731d"
   },
   {
     "url": "index.html",
-    "revision": "2362be9b3b4345969c35e515000fb2dc"
+    "revision": "7febd0aacd957c328423930163c1293f"
   },
   {
     "url": "manifest.json",

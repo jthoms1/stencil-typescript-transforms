@@ -10,6 +10,10 @@ export interface GithubData {
   bio: string;
 }
 
+/**
+ * This component accepts a github userid and then displays a brief summary of their details
+ * including their avatar img.
+ */
 @Component({
   tag: 'github-intro',
   scoped: true,
@@ -26,6 +30,9 @@ export interface GithubData {
 })
 export class GithubIntro {
 
+  /**
+   * The github userid for the user that you would like to display
+   */
   @Prop() userid: string = '';
   @State() userData: GithubData;
 

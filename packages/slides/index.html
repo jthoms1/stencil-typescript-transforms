@@ -448,7 +448,6 @@
         <section>
           <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
           <h2>Metadata Collection</h2>
-          <img class="nostyle" src="images/meta-component-code.png"/><br/>
           <img class="nostyle" src="images/meta-component-details.png"/>
           <aside class="notes">
             <li>Examples would be tagName, all style data, what are possible properties, well mostly all decorators.
@@ -521,11 +520,11 @@
         <section>
           <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
           <h2>Seamless<sup style="font-size: 0.6em">*</sup> Upgrades</h2>
+          <ul>
+            <li class="fragment">One runtime with components compiled with different versions.</li><br/>
+            <li class="fragment">Codemods are possible when you control the output structure</li>
+          </ul>
           <aside class="notes">
-            <li>Component code compiles down to what we call a standardized target
-              component.  It is normalized across projects and potentially across versions of Stencil.
-            <li>We write codemods for these standardized target components so that if a component written in version
-              0.0.7 needs to be changed to work with 0.0.8 then we can upgrade the component at compile time.
             <li>These situations would occur if you found a standalone component that you like and wanted to included
               in your own internal component collection you would not need multiple stencil runtimes delivered to a browser.
             <li>Controlling the output of our compiled code and versions to our compiler means we know exactly how
@@ -538,11 +537,10 @@
           <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
           <h2>Docs generation</h2>
           <ul>
-            <li>Almost free</li><br/>
             <li>Metadata + JSDoc comments becomes docs</li>
           </ul>
           <aside class="notes">
-            <li>Remember all the metadata we collected, especially around props and their
+            <li>Remember all the metadata we collected, props and their
               types/docs that is very nice for generating documentation.
             <li>Similar to the idea of TypeDoc but very specific to components and their own usage
           </aside>
