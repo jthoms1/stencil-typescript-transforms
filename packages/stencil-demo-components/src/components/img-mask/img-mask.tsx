@@ -7,6 +7,11 @@ import { Component, Prop } from '@stencil/core';
     .blur-filter {
       filter: blur(2px) grayscale(80%);
     }
+    .blur-window {
+      position: absolute;
+      right: 50%;
+      box-shadow: 0 0 22px -2px rgba(0, 0, 0, 0.2)
+    }
   `
 })
 export class ImgMask {
@@ -28,12 +33,10 @@ export class ImgMask {
   render() {
     return [
       <img width={this.width} class="nostyle blur-filter" src={this.src} />,
-      <div style={{
+      <div class="blur-window" style={{
         "width": `${this.width}px`,
         "background-size": `${this.width}px`,
         "background-image": `url(${this.src})`,
-        "position": "absolute",
-        "right": "50%",
         "margin-right": `-${this.width / 2}px`,
         "top": `${this.maskTop}px`,
         "background-position": `0 -${this.maskTop}px`,

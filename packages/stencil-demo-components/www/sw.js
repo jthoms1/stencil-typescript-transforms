@@ -27,7 +27,7 @@ self.__precacheManifest = [
   },
   {
     "url": "build/stencil-demo-components.js",
-    "revision": "0f6ef1a9367051793e036107c400aecb"
+    "revision": "e685eedfb872b3999c495d774b0cc3f3"
   },
   {
     "url": "build/stencil-demo-components/0uoj6bzw.es5.js",
@@ -46,32 +46,32 @@ self.__precacheManifest = [
     "revision": "b30633245fccf25c8cc742d1b8586cc2"
   },
   {
-    "url": "build/stencil-demo-components/eznzprhf.es5.js",
-    "revision": "0a275d90ebd1ec0909c6fa928b8d29b0"
-  },
-  {
-    "url": "build/stencil-demo-components/eznzprhf.js",
-    "revision": "5a9fcc9b1c36c36a40e9bc871112bd39"
-  },
-  {
-    "url": "build/stencil-demo-components/eznzprhf.sc.es5.js",
-    "revision": "35bd3808779a677a93f7c184d4820b12"
-  },
-  {
-    "url": "build/stencil-demo-components/eznzprhf.sc.js",
-    "revision": "b1a64ff86c5ac4c411d98ef40b401f0e"
-  },
-  {
     "url": "build/stencil-demo-components/stencil-demo-components.96yjbqvh.js",
     "revision": "0c54e2deb4bd7b7007f4a989ba77faa4"
   },
   {
     "url": "build/stencil-demo-components/stencil-demo-components.registry.json",
-    "revision": "97ff8059b881ed691ca1a3ece3eb9806"
+    "revision": "4059b5ff3ea5201fb447ecd1a86cfa01"
   },
   {
     "url": "build/stencil-demo-components/stencil-demo-components.vwlcpfe5.js",
     "revision": "c6c201edfba9778ef3fe33141b482775"
+  },
+  {
+    "url": "build/stencil-demo-components/t5y2crnh.es5.js",
+    "revision": "f822101991f1257ce7d8e602f4f958db"
+  },
+  {
+    "url": "build/stencil-demo-components/t5y2crnh.js",
+    "revision": "290e96c2040c47a5c16bf671c70a3752"
+  },
+  {
+    "url": "build/stencil-demo-components/t5y2crnh.sc.es5.js",
+    "revision": "e1112d35d637c7078e03819dfe28c893"
+  },
+  {
+    "url": "build/stencil-demo-components/t5y2crnh.sc.js",
+    "revision": "9dc1caf123cb561e0b0749cf2b7d23bd"
   },
   {
     "url": "build/stencil-demo-components/yv8qchyc.es5.js",
@@ -95,7 +95,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "969e19fef7221c145204a1e6d644071a"
+    "revision": "2362be9b3b4345969c35e515000fb2dc"
   },
   {
     "url": "manifest.json",

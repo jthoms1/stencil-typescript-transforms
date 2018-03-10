@@ -123,7 +123,7 @@
           </p>
           <aside class="notes">
             <li>Hi I am Josh Thomas, You can find me on github/twitter or any other social thing as jthoms1.
-            <li>Today I will be talking about how we built StencilJS with TypeScript
+            <li>Today I will be talking about how we built Stencil with TypeScript
           </aside>
         </section>
 
@@ -135,7 +135,7 @@
           </ul>
           <aside class="notes">
             <li>Senior Developer at Ionic
-            <li>One of the creators of StencilJS
+            <li>One of the creators of Stencil
           </aside>
         </section>
 
@@ -154,10 +154,10 @@
             </span>
           </h2>
           <aside class="notes">
-            <li>I love writing JavaScript.
             <li>I joined Ionic 2 years ago.
             <li>At the time I was writing primarily React applications
             <li>My preferred experience was Babel and a well tuned Eslint config.
+            <li>I love writing JavaScript.
           </aside>
         </section>
         <section>
@@ -220,7 +220,6 @@
             <li class="fragment">TypeScript All the Things <img width=75 style="margin-bottom: -10px" class="nostyle" src="images/all-the-things.png"/></li>
           </ul>
           <aside class="notes">
-            <li>Framework/Component Library for mobile applications
             <li>Bootstrap for mobile.
             <li>Time for a vanity metric. We are the number 3 starred Github project based on Typescript,
               behind VS Code and Angular with around 33k stars</li>
@@ -274,39 +273,41 @@
         </section>
 
         <section>
-          <h2>Why Build StencilJS</h2>
+          <h2>Why Build Stencil</h2>
           <ul style="padding-right: 200px">
             <li class="fragment">Others could value our abstractions</li><br/>
             <li class="fragment">Stencil is a 'compiler' that generates Web Components
               <img style="top: 30px; right: -152px" width=360 class="nostyle right-info-img" src="images/stencil-fits-in.png"/>
             </li><br/>
-            <li class="fragment">Developer Experience and performance</li>
+            <li class="fragment">Developer Experience(DX) and performance</li>
           </ul>
           <aside class="notes">
             <li>We didn’t plan on building a new tool, we just wanted to improve Ionic, but after a few months of
               work we realized that what we were building would be valuable to other software teams as well.
             <li>We took the tool and moved it into a separate project from Ionic and we called it Stencil.
             <li>Stencil is a compiler that generates Web Component from a simplified component interface
-            <li>Generates tiny, highly optimized Web Components.
+            <li>2 most important things for us in building Stencil JS were Dev experience and the performance
+              of applications built using our components.</li>
             <li>Web Components turned out to be much faster than we expected.</li>
           </aside>
         </section>
 
         <section>
           <br/><br/><br/>
-          <h2>StencilJS</h2>
+          <h2>Stencil</h2>
           <queue-demo></queue-demo>
           <aside class="notes">
             <li>Advantage of using html for my slides is that I can embed web components directly</li>
             <li>This is a demo we use to show that we components are performant, this is animating the whole
-              tree and updated 729 text nodes every second. Every dot and triangle is a web component and the number
+              tree and updated 729 text nodes every second.
+            <li>Every dot and triangle is a web component and the number
               being displayed is actually passed down from parent to child from the top as props every second.
             </li>
           </aside>
         </section>
 
         <section>
-          <h2>StencilJS</h2>
+          <h2>Stencil DX</h2>
           <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
           <ul style="width: 720px; min-height: 600px;">
             <li>TypeScript</li><br/>
@@ -321,19 +322,17 @@
         </section>
 
         <section>
-          <h2>StencilJS</h2>
+          <h2>Stencil Components</h2>
           <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
           <ul style="width: 720px; min-height: 600px">
-            <li>Have excellent developer ergonomics</li><br/>
-            <li class="fragment">Be able to be lazy loaded</li><br/>
+            <li class="fragment">Be lazy loaded</li><br/>
             <li class="fragment">Be type safe</li><br/>
             <li class="fragment">Be as tiny as possible</li><br/>
             <li class="fragment">Be future proof</li>
           </ul>
           <aside class="notes">
-            <li>Provide excellent developer experience/ergonomics.
-            <li>Be lazy loaded is core of the architecture. When a component first hits the DOM we need to either wire it immediatly
-              or download the cooresponding class code and then wire it up.
+            <li>Be lazy loaded is core of the architecture. When a component first hits the DOM we
+              download the cooresponding class code and then wire it up. Sounds like a lot of request but we group components
             <li>Be type safe - export types so that if a dev wants to use a component with any framework + typescript it
               should also allow type safety.
             <li>Be as tiny as possible with as few polyfills as possible.
@@ -345,22 +344,7 @@
 
         <section>
           <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
-          <h2>Stencil Compiler</h2>
-          <ul style="width: 720px; min-height: 600px">
-            <li class="fragment">Our laundry list of requirements meant we needed to write a compiler</li><br/>
-            <li class="fragment">TypeScript powers the Stencil Compiler</li>
-          </ul>
-          <aside class="notes">
-            <li>We realized that in order to accomplish what we wanted we<br/>
-              needed more than just language/runtime support, we also need our own compiler.
-            <li>We were already using Typescript so the choice was obvious to build our own compiler
-              using the provided Compiler API. - Which turns out was a great coincidence
-          </aside>
-        </section>
-
-        <section>
-          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
-          <h2>Component API</h2>
+          <h2>Stencil Components</h2>
           <img width=590 class="nostyle blur-filter" src="images/component-code.png"/>
           <aside class="notes">
             <li>This is a pretty typical Stencil component</li>
@@ -375,7 +359,7 @@
 
         <section>
           <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
-          <h2>Component API</h2>
+          <h2>Stencil Components</h2>
           <img-mask
             src="images/component-code.png"
             width="590"
@@ -388,7 +372,7 @@
 
         <section>
           <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
-          <h2>Component API</h2>
+          <h2>Stencil Components</h2>
           <img-mask
             src="images/component-code.png"
             width="590"
@@ -404,7 +388,7 @@
 
         <section>
           <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
-          <h2>Component API</h2>
+          <h2>Stencil Components</h2>
           <img-mask
             src="images/component-code.png"
             width="590"
@@ -418,7 +402,7 @@
 
         <section>
           <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
-          <h2>Component API</h2>
+          <h2>Stencil Components</h2>
           <img-mask
             src="images/component-code.png"
             width="590"
@@ -427,6 +411,21 @@
           <aside class="notes">
             <li>render Method - returns a JSX representation of what should appear on the page. This method was reduced for brevity
               JSX can seem foreign but it is super expressive and supported by TypeScript out of the box.
+          </aside>
+        </section>
+
+        <section>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <h2>Stencil Compiler</h2>
+          <ul style="width: 720px; min-height: 600px">
+            <li class="fragment">Our laundry list of requirements meant we needed to write a compiler</li><br/>
+            <li class="fragment">TypeScript powers the Stencil Compiler</li>
+          </ul>
+          <aside class="notes">
+            <li>We realized that in order to accomplish what we wanted we<br/>
+              needed more than just language/runtime support, we also need our own compiler.
+            <li>We were already using Typescript so the choice was obvious to build our own compiler
+              using the provided Compiler API. - Which turns out was a great coincidence
           </aside>
         </section>
 
