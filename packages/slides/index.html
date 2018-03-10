@@ -430,7 +430,6 @@
           </aside>
         </section>
 
-
         <section>
           <h2>How the sausage gets made <img class="nostyle emoji" src="images/hot-dog.png"</h2>
         </section>
@@ -438,18 +437,25 @@
         <section>
           <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
           <h2>Metadata Collection</h2>
-          <img class="nostyle" src="images/meta-component-code.png"/><br/>
-          <img class="nostyle fragment" src="images/meta-component-details.png"/>
+          <img style="padding-bottom: 600px" class="nostyle" src="images/meta-component-code.png"/><br/>
           <aside class="notes">
-          Why would you do this
-          - There is alot of valuable information defined by developers while building the components
-            that can provide us with valuable information while transforming and generating the resulting code.
-          - Examples would be tagName, all style data, what are possible properties, well mostly all decorators.
-          - Also test for valid data, we depend on types but sometimes you need more validation
-          - Prop Decorator is a bit more interesting. We infer things based on your prop types. This allows us to be more
-            effecient in our runtime code.
-          How does it work
-          - We walk the tree and collect the information and normalize the data based on some usage rules.
+            <li>There is alot of information defined by developers while writing the components
+              that can provide us with valuable information while transforming and generating the resulting code.</li>
+            <li>This is how you begin to use the TS Compiler API.  Create a program and pass it your source files</li>
+            <li>Then we use its typechecker and begin walking the AST of all files provided. Whats interesting about
+              how these tools is that we can do some nice type analysis in the TS API.</li>
+          </aside>
+        </section>
+        <section>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <h2>Metadata Collection</h2>
+          <img class="nostyle" src="images/meta-component-code.png"/><br/>
+          <img class="nostyle" src="images/meta-component-details.png"/>
+          <aside class="notes">
+            <li>Examples would be tagName, all style data, what are possible properties, well mostly all decorators.
+            <li>Also test for valid data, we depend on types but sometimes you need more validation
+            <li>We infer things based on your prop types. This allows us to be more effecient in our runtime code.
+            <li>We walk the AST and collect the information and normalize the data based on some usage rules.
             <li>All the data we collected during the metadata collection lets add that back to the component in a straight forward way
           </aside>
         </section>
@@ -459,6 +465,12 @@
           <h2>Power of Transforms</h2>
           <img style="padding-bottom: 100px;" class="nostyle" src="images/transform-components.png"/>
           <aside class="notes">
+            <li>After we have collected all of the metadata it is time to start adapting the code</li>
+            <li>I will be showing the before/after later during the demo</li>
+            <li>We have a number of AST transforms that let us reduce the complexity of code before
+              TypeScript does its own transpliation, as well as some that we use after.</li>
+            <li>Again we are going to use the TS API.  Each transform listed here runs over the AST of every file
+              included in the TS build. </li>
           </aside>
         </section>
 
@@ -471,9 +483,9 @@
             mask-height="40"
             mask-top="180"></img-mask>
           <aside class="notes">
-            <li>Polyfills add extra code</li>
-            <li>removes all decorators that are specific to stencil
-            <li>Typescript decorators have some ugly extra code that we don’t need
+            <li>Removes all decorators that are specific to stencil, We don't need these at runtime
+              we have already collected all of the metadata</li>
+            <li>We will then add all the component metadata collected back in but as accessor properties on the class
           </aside>
         </section>
 
@@ -486,14 +498,9 @@
             mask-height="20"
             mask-top="220"></img-mask>
           <aside class="notes">
-          Why would you do this
-          - If all components in your project do not use specific features then really non of your runtime needs code around those features
-            this allows us to reduce the amount of common code that needs to be shipped to a browser.
-          How does it work
-          - We use the metadata collection to gain better insight into your components needs and then set flags that allow us to not include these
-            features during build time.
-          - If you are never listening to a host element then the listener logic is never needed in core, does your project include SVGs.
-            <li>Based on features used we may not need to bundle all of stencil’s runtime just those features that are specified by the code.
+            <li>If all components in your project do not use specific features then really non of your runtime
+              needs code around supporting those features. This allows us to reduce the amount of common code that needs
+              to be shipped to a browser.
           </aside>
         </section>
 
@@ -506,28 +513,25 @@
             mask-height="115"
             mask-top="255"></img-mask>
           <aside class="notes">
-            Purge anything left that we do not need
+            <li>Purge anything left that we do not need really the removal at these steps are safeguards</li>
+            <li>Collect some more information after transpile about relationships between components that can allow
+              the building to intelligently group components together when downloaded.</li>
           </aside>
         </section>
 
         <section>
           <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
-          <h2>Seamless Upgrades</h2>
-          <ul>
-
-          </ul>
+          <h2>Seamless<sup style="font-size: 0.6em">*</sup> Upgrades</h2>
           <aside class="notes">
-            Explain how we can upgrade
-            - Most of our code that compiles down to what we call a standardized target
-              component.  It is normalized across projects and
-              potentially across versions of Stencil.
-            - If we deprecate a specific feature we allow it to continue to work, provide info that it will be
-              deprecated during compile time
-              and then after an upgrade the devs app still works.
-            - We also have the ability remove deprecated features from runtime
-            Example of text we show when upgrading
-            <li>Read files generated by stencil and decide how they need to change and then also let the dev know that we did this for them.
-            <li>ontrol the output of our compiled code and versioned to our compiler means we know exactly how the api changed and then the codemods that need to occur to ensure it works with newer runtime code.
+            <li>Component code compiles down to what we call a standardized target
+              component.  It is normalized across projects and potentially across versions of Stencil.
+            <li>We write codemods for these standardized target components so that if a component written in version
+              0.0.7 needs to be changed to work with 0.0.8 then we can upgrade the component at compile time.
+            <li>These situations would occur if you found a standalone component that you like and wanted to included
+              in your own internal component collection you would not need multiple stencil runtimes delivered to a browser.
+            <li>Controlling the output of our compiled code and versions to our compiler means we know exactly how
+              the api changed and then the codemods that need to occur to ensure it works with newer runtime code.
+            <li>The asterisk is because have had to create 2 codemods so far and I cannot see that far into the future but we will try.</li>
           </aside>
         </section>
 
@@ -577,6 +581,9 @@
             </li>
             <li>
               <a href="https://github.com/Microsoft/TypeScript/wiki/Using-the-Compiler-API">https://github.com/Microsoft/TypeScript/wiki/Using-the-Compiler-API</a>
+            </li>
+            <li>
+              <a href="https://astexplorer.net/">https://astexplorer.net</a>
             </li>
           </ul>
         </section>
