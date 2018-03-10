@@ -46,18 +46,16 @@ export class GithubIntro {
     if (!this.userData) {
       return null;
     }
-    return (
-      <div>
-        <small>
-          {this.userData.name ?
-            `${this.userData.name} / ` :
-            null}
-          <a href={this.userData.html_url}>@{this.userData.login}</a>
-        </small>
-        {this.userData.avatar_url ?
-          <img class="roundup" src={this.userData.avatar_url} alt="gravatar" /> :
+    return [
+      <small>
+        {this.userData.name ?
+          `${this.userData.name} / ` :
           null}
-      </div>
-    );
+        <a href={this.userData.html_url}>@{this.userData.login}</a>
+      </small>,
+      (this.userData.avatar_url) ?
+        <img class="roundup" src={this.userData.avatar_url} alt="gravatar" /> :
+        null
+    ];
   }
 }
