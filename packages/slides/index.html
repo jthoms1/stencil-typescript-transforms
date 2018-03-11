@@ -517,8 +517,7 @@
             mask-top="255"></img-mask>
           <aside class="notes">
             <li>Purge anything left not needed at runtime</li>
-            <li>Collect some more information after transpile about relationships between components that can allow
-              the building to intelligently group components together when downloaded.</li>
+            <li>Metadata lets us intelligently group components together when downloaded.</li>
           </aside>
         </section>
 
@@ -529,9 +528,7 @@
             <li>Codemods are possible when you control the output structure</li>
           </ul>
           <aside class="notes">
-            <li>We want one runtime for components that might have been compiled with different versions of Stencil.</li>
-            <li>Controlling the output of our compiled code and versions to our compiler means we know exactly how
-              the api changed and then the codemods that need to occur to ensure it works with newer runtime code.
+            <li>We want older versions of stencil components to work with new releases.
             <li>The asterisk is because have had to create 2 codemods so far and I cannot see that far into the future but we will try.</li>
           </aside>
         </section>
