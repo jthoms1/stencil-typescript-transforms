@@ -1,6 +1,7 @@
 /*! Built with http://stenciljs.com */
 const { h, Context } = window.StencilDemoComponents;
 
+<<<<<<< HEAD
 /**
  * This component accepts a github userid and then displays a brief summary of their details
  * including their avatar img.
@@ -10,6 +11,10 @@ class GithubIntro {
         /**
          * The github userid for the user that you would like to display
          */
+=======
+class GithubIntro {
+    constructor() {
+>>>>>>> yep
         this.userid = '';
     }
     fetchGithubData(userid) {
