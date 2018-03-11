@@ -1,34 +1,44 @@
-<!DOCTYPE html><html dir="ltr" lang="en" data-ssr=""><head> <meta charset="utf-8"> <title>Stencil Starter App</title> <meta name="Description" content="Welcome to the Stencil App Starter. You can use this starter to build entire apps all with web components using Stencil!"> <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"> <meta name="theme-color" content="#16161d"> <meta name="apple-mobile-web-app-capable" content="yes"> <meta http-equiv="x-ua-compatible" content="IE=Edge"> <link rel="apple-touch-icon" href="/assets/icon/icon.png"> <link rel="icon" type="image/x-icon" href="/assets/icon/favicon.ico"> <link rel="manifest" href="/manifest.json"> <style>
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Stencil Demo Components</title>
+
+  <script src="build/stencil-demo-components.js"></script>
+
+  <style>
     body.demo {
       padding: 100px;
     }
    .centered {
      display: block;
-     width: 500px;
+     min-width: 500px;
      text-align: center;
      margin: 0 auto;
+     margin-top: 100px;
    }
    .centered small {
      font-size: 18pt;
      display: block;
      margin: 20px 0;
    }
+   img-mask {
+     display: inline-block;
+   }
   </style>
-<link rel="canonical" href="/"></head>
-<body class="demo"> <p class="centered"> <github-intro userid="jthoms1" data-github-intro-host="" data-ssrv="0" class="hydrated"><!----></github-intro> </p> <style>
-    body {
-      margin: 0px;
-      padding: 0px;
-      font-family: sans-serif;
-    }
-  </style> <script type="text/javascript">
-    var start = Date.now();
-    var baseEl = document.querySelector('queue-demo');
-    function update() {
-      baseEl.elapsed = Date.now() - start;
-      requestAnimationFrame(update);
-    }
-    requestAnimationFrame(update);
-  </script>
-<script>"serviceWorker"in navigator&&"file:"!==location.protocol&&window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js").then(function(e){console.log("service worker registered",e),e.onupdatefound=function(){var n=e.installing;n.onstatechange=function(){"installed"===n.state&&window.dispatchEvent(new Event("swUpdate"))}}}).catch(function(e){console.log("service worker error",e)})});</script> <script>/*! Built with http://stenciljs.com */
-!function(e,t,n,i,o,s,c,r,u,a,d){!function(e,t,n,i,o,s,c,r,u,a,d,m,l){(e.StencilDemoComponents=e.StencilDemoComponents||{}).components=d,(l=d.filter(function(e){return e[2]}).map(function(e){return e[0]})).length&&((m=t.createElement("style")).innerHTML=l.join()+"{visibility:hidden}.hydrated{visibility:inherit}",m.setAttribute("data-styles",""),t.head.insertBefore(m,t.head.firstChild)),(m=n[n.length-1])&&m.src&&(s=(l=m.src.split("/").slice(0,-1)).join("/")+(l.length?"/":"")+"stencil-demo-components/"),(m=t.createElement("script")).src=s+(!function(e){return e.location.search.indexOf("core=es5")>-1}(e)&&function(e){return e.customElements}(e)&&function(e){if(!("noModule"in m))return!1;try{return new Function('import("")'),!0}catch(e){return!1}}()&&function(e){return e.fetch}(e)&&function(e){return e.CSS&&e.CSS.supports&&e.CSS.supports("color","var(--c)")}(e)?"stencil-demo-components.vwlcpfe5.js":"stencil-demo-components.96yjbqvh.js"),m.setAttribute("data-path",s),m.setAttribute("data-namespace","stencil-demo-components"),t.head.appendChild(m)}(e,t,t.scripts,0,0,"/build/stencil-demo-components/",0,0,0,0,[["github-intro","0uoj6bzw",1,[["userData",5],["userid",1,1,2]],2],["img-mask","t5y2crnh",1,[["maskHeight",1,"mask-height",4],["maskTop",1,"mask-top",4],["src",1,1,2],["width",1,1,4]],2],["queue-demo","yv8qchyc",0,[["elapsed",1,1,4]],1],["queue-dot","yv8qchyc",0,[["hover",5],["size",1,1,4],["text",1,1,2],["x",1,1,4],["y",1,1,4]],1],["queue-triangle","yv8qchyc",0,[["s",1,1,4],["seconds",1,1,4],["x",1,1,4],["y",1,1,4]],1]],void 0)}(window,document);</script></body></html>
+</head>
+<body class="demo">
+
+  <p class="centered">
+    <github-intro userid="jthoms1"></github-intro>
+  </p>
+  <p class="centered">
+    <img-mask
+      src="assets/component-code.png"
+      width="910"
+      mask-height="115"
+      mask-top="255">
+    </img-mask>
+  </p>
+</body>
+</html>

@@ -122,7 +122,7 @@
             <github-intro userid="jthoms1"></github-intro>
           </p>
           <aside class="notes">
-            <li>Hi I am Josh Thomas, You can find me on github/twitter or any other social thing as jthoms1.
+            <li>Hi I am Josh Thomas, You can find me on github/twitter as jthoms1.
             <li>Today I will be talking about how we built Stencil with TypeScript
           </aside>
         </section>
@@ -365,7 +365,7 @@
             mask-height="208"
             mask-top="0"/>
           <aside class="notes">
-            <li>Component - Class decorator that accepts general metadata or information about the component
+            <li>Class decorator - "Component" that accepts general metadata or information about the component
           </aside>
         </section>
 
@@ -378,9 +378,10 @@
             mask-height="50"
             mask-top="233"/>
           <aside class="notes">
-            <li>Prop - Property Decorator - designates attributes or properties that can be passed to this component.
-              If a prop value changes
-            <li>State - Property Decorator - designates which class property is part of the components state.
+            <li>Property Decorators</li>
+            <li>Prop - designates attributes or properties that can be passed to this component.
+              If a prop value changes the component reacts and rerenders.
+            <li>State - designates which class property is part of the components state.
               The component reacts to changes in state and forces a rerender.
           </aside>
         </section>
@@ -394,8 +395,8 @@
             mask-height="200"
             mask-top="290"/>
           <aside class="notes">
-            <li>Watch - Method Decorator - designates a function to be called when the given state/prop name changes.
-            <li>componentWillLoad is one of the many lifecycle methods. This one is called right before the component has loaded
+            <li>Method Decorator - Watch - which accepts a prop/state name - designates a function to be called when the given state/prop changes in value.
+            <li>"componentWillLoad" is one of the many lifecycle methods. This one is called right before the component has loaded
           </aside>
         </section>
 
@@ -430,6 +431,11 @@
 
         <section>
           <h2>How the sausage gets made <img class="nostyle emoji" src="images/hot-dog.png"</h2>
+          <aside class="notes">
+            <li>Does everyone know this expression, usually you want to just eat the sausage but you really don't want
+              to see the process.
+            <li>Today I am going to show some of the internals of the Stencil Compiler
+          </aside>
         </section>
 
         <section>
@@ -437,8 +443,8 @@
           <h2>Metadata Collection</h2>
           <img style="padding-bottom: 600px" class="nostyle" src="images/meta-component-code.png"/><br/>
           <aside class="notes">
-            <li>There is alot of information defined by developers while writing the components
-              that can provide us with valuable information while transforming and generating the resulting code.</li>
+            <li>There is alot of information provided by developers while they are writing components.
+              This can be valuable information while transforming and generating the resulting runtime code.</li>
             <li>This is how you begin to use the TS Compiler API.  Create a program and pass it your source files</li>
             <li>Then we use its typechecker and begin walking the AST of all files provided. Whats interesting about
               how these tools is that we can do some nice type analysis in the TS API.</li>
@@ -447,12 +453,13 @@
         <section>
           <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
           <h2>Metadata Collection</h2>
-          <img class="nostyle" src="images/meta-component-details.png"/>
+          <img style="padding-bottom: 200px" class="nostyle" src="images/meta-component-details.png"/>
           <aside class="notes">
-            <li>Examples would be tagName, all style data, what are possible properties, well mostly all decorators.
-            <li>Also test for valid data, we depend on types but sometimes you need more validation
-            <li>We infer things based on your prop types. This allows us to be more effecient in our runtime code.
+            <li>This is a simplified version of our metadata collection method.</li>
             <li>We walk the AST and collect the information and normalize the data based on some usage rules.
+            <li>What you can really gather is that the metadata is coming directly from the decorators.</li>
+            <li>We also test for valid data, we depend on types but sometimes you need more validation
+            <li>We infer things based on your prop types. This allows us to be more effecient in our runtime code.
             <li>All the data we collected during the metadata collection lets add that back to the component in a straight forward way
           </aside>
         </section>
@@ -462,12 +469,11 @@
           <h2>Power of Transforms</h2>
           <img style="padding-bottom: 100px;" class="nostyle" src="images/transform-components.png"/>
           <aside class="notes">
-            <li>After we have collected all of the metadata it is time to start adapting the code</li>
-            <li>I will be showing the before/after later during the demo</li>
-            <li>We have a number of AST transforms that let us reduce the complexity of code before
-              TypeScript does its own transpliation, as well as some that we use after.</li>
+            <li>After we have collected all of the metadata it is time to start transforming the code</li>
             <li>Again we are going to use the TS API.  Each transform listed here runs over the AST of every file
               included in the TS build. </li>
+            <li>Notice how some of the transforms are in a before and some in an after.  This designates if the transform
+              is to be executed before Typescripts own transforms or after.</li>
           </aside>
         </section>
 
@@ -482,7 +488,7 @@
           <aside class="notes">
             <li>Removes all decorators that are specific to stencil, We don't need these at runtime
               we have already collected all of the metadata</li>
-            <li>We will then add all the component metadata collected back in but as accessor properties on the class
+            <li>We will then add the component metadata back in but as simplified properties
           </aside>
         </section>
 
@@ -510,7 +516,7 @@
             mask-height="115"
             mask-top="255"></img-mask>
           <aside class="notes">
-            <li>Purge anything left that we do not need really the removal at these steps are safeguards</li>
+            <li>Purge anything left not needed at runtime</li>
             <li>Collect some more information after transpile about relationships between components that can allow
               the building to intelligently group components together when downloaded.</li>
           </aside>
@@ -520,12 +526,10 @@
           <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
           <h2>Seamless<sup style="font-size: 0.6em">*</sup> Upgrades</h2>
           <ul>
-            <li class="fragment">One runtime with components compiled with different versions.</li><br/>
-            <li class="fragment">Codemods are possible when you control the output structure</li>
+            <li>Codemods are possible when you control the output structure</li>
           </ul>
           <aside class="notes">
-            <li>These situations would occur if you found a standalone component that you like and wanted to included
-              in your own internal component collection you would not need multiple stencil runtimes delivered to a browser.
+            <li>We want one runtime for components that might have been compiled with different versions of Stencil.</li>
             <li>Controlling the output of our compiled code and versions to our compiler means we know exactly how
               the api changed and then the codemods that need to occur to ensure it works with newer runtime code.
             <li>The asterisk is because have had to create 2 codemods so far and I cannot see that far into the future but we will try.</li>
@@ -549,9 +553,7 @@
           <h2>We'll do it live. <img class="emoji nostyle" src="images/video-camera.png"/></h2>
           <aside class="notes">
             <li>I have included a few Stencil Components in this presentation</li>
-            <li>We want the ability to have lazy loaded components and get full type support.  Globals here we come.
-            <li>document.createElement + JSX
-            <li></li>
+            <li>I want to show you how the work in a browser and some more real world code.</li>
           </aside>
         </section>
 
