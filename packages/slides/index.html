@@ -221,7 +221,7 @@
           </ul>
           <aside class="notes">
             <li>Bootstrap for mobile.
-            <li>Time for a vanity metric. We are the number 3 starred Github project based on Typescript with around 33k stars</li>
+            <li>Time for a vanity metric. We are the number 3 starred Github project based on Typescript</li>
             <li>Component library/framework built originally on AngularJS and then Angular /w TypeScript. We
               actually opted at the time to not support JavaScript with Angular and only support TypeScript. Which was a good thing.
             <li>After this Typescript became the language of Ionic,
@@ -296,11 +296,9 @@
           <h2>Stencil</h2>
           <queue-demo></queue-demo>
           <aside class="notes">
-            <li>Advantage of using html for my slides is that I can embed web components directly</li>
+            <li>slides are in html, embed web components directly</li>
             <li>This is a demo we use to show that we components are performant, this is animating the whole
               tree and updated 729 text nodes every second.
-            <li>Every dot and triangle is a web component and the number
-              being displayed is actually passed down from parent to child from the top as props every second.
             </li>
           </aside>
         </section>
@@ -335,9 +333,7 @@
             <li>Be type safe - devs can use stencil components with any framework and they should get full type support that
               component.
             <li>Be as tiny as possible with as few polyfills as possible.
-            <li>Components should be able to work with future versions of the stencil compiler with as few
-              breaking changes as possible. We wanted the ability to run components written with older version of Stencil
-              to be able to be included in projects with new versions of Stencil.
+            <li>A component built today should work with library/frameworks of the future
           </aside>
         </section>
 
@@ -446,8 +442,6 @@
             <li>There is alot of information provided by developers while they are writing components.
               This can be valuable information while transforming and generating the resulting runtime code.</li>
             <li>This is how you begin to use the TS Compiler API.  Create a program and pass it your source files</li>
-            <li>Then we use its typechecker and begin walking the AST of all files provided. Whats interesting about
-              how these tools is that we can do some nice type analysis in the TS API.</li>
           </aside>
         </section>
         <section>
@@ -456,7 +450,7 @@
           <img style="padding-bottom: 200px" class="nostyle" src="images/meta-component-details.png"/>
           <aside class="notes">
             <li>This is a simplified version of our metadata collection method.</li>
-            <li>We walk the AST and collect the information and normalize the data based on some usage rules.
+            <li>We walk the AST and collect the information and normalize the data into a standard format.
             <li>What you can really gather is that the metadata is coming directly from the decorators.</li>
             <li>We also test for valid data, we depend on types but sometimes you need more validation
             <li>We infer things based on your prop types. This allows us to be more effecient in our runtime code.
@@ -582,6 +576,12 @@
               <a href="https://astexplorer.net/">https://astexplorer.net</a>
             </li>
           </ul>
+          <aside class="notes">
+            <li>Link to our website</li>
+            <li>Link to my github repo for this presentation</li>
+            <li>Link to Typescript Compiler docs</li>
+            <li>Link to the most valuable resource if you are working with the TS AST.</li>
+          </aside>
         </section>
 
       </div>
